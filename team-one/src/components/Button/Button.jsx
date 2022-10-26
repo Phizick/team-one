@@ -1,5 +1,5 @@
 import stylesButton from "./Button.module.css";
-export const Button = ({ children, img, type, width, direction }) => {
+export const Button = ({ children, img, type, width, direction_img }) => {
   const classNames = require("classnames");
   const buttonBgColor =
     type === "primary"
@@ -17,7 +17,7 @@ export const Button = ({ children, img, type, width, direction }) => {
       : width === 170
       ? stylesButton.button_170
       : "";
-  const directionImg = direction === "left" ? stylesButton.img_left : "";
+  const directionImg = direction_img === "left" ? stylesButton.img_left : "";
 
   return (
     <button
