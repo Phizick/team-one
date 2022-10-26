@@ -1,5 +1,3 @@
-
-
 .button {
   box-sizing: border-box;
   border: 0;
@@ -56,8 +54,25 @@
   max-width: 166px;
 }
 
+.button_166 > .text {
+  font-size: 14px;
+}
+
 .button_170 {
   max-width: 170px;
+}
+
+.button_48 {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+
+.button_48 > .img {
+  left: 14px;
 }
 
 .img_left {

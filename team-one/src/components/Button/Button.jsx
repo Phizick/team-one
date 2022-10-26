@@ -16,6 +16,8 @@ export const Button = ({ children, img, type, width, direction_img }) => {
       ? stylesButton.button_166
       : width === 170
       ? stylesButton.button_170
+      : width === 48
+      ? stylesButton.button_48
       : "";
   const directionImg = direction_img === "left" ? stylesButton.img_left : "";
 
