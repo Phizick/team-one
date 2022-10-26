@@ -8,6 +8,8 @@ export const Button = ({ children, img, type, width, direction_img }) => {
       ? stylesButton.button_secondary
       : type === "transparent"
       ? stylesButton.button_transparent
+      : type === "outline"
+      ? stylesButton.button_outline
       : "";
   const buttonWidth =
     width === 180

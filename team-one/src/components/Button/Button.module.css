@@ -45,6 +45,14 @@
   border: 1px solid var(--Gradation-100);
 }
 
+.button_outline {
+  border: 1px solid var(--Gradation-300);
+}
+
+.button_outline > .text {
+  font-size: 14px;
+}
+
 .button_180 {
   max-width: 180px;
 }

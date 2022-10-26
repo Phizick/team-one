@@ -7,7 +7,7 @@ export const RecomendationPage = () => {
     <div>
       <h1>RecomendationPage</h1>
       <Link to="/login">Логин</Link>
-      <Button img={logo} type="primary">
+      <Button img={logo} type="outline">
         Войти
       </Button>
     </div>
