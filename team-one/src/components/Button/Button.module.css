@@ -8,10 +8,15 @@
   align-items: flex-start;
   border-radius: 8px;
   gap: 8px;
-
   cursor: pointer;
   width: 100%;
   position: relative;
+  transition: 0.2s;
+}
+
+.button:disabled {
+  background: var(--Gradation-500);
+  color: var(--Gradation-500);
 }
 
 .text {
@@ -36,6 +41,14 @@
   background: var(--Green-100);
 }
 
+.button_primary:hover {
+  background: var(--Green-200);
+}
+
+.button_primary:active {
+  background: var(--Green-400);
+}
+
 .button_secondary {
   background: var(--Gradation-100);
 }
@@ -47,6 +60,14 @@
 
 .button_outline {
   border: 1px solid var(--Gradation-300);
+}
+
+.button_outline:hover {
+  border: 1px solid var(--Gradation-400);
+}
+
+.button_outline:active {
+  border: 1px solid var(--Gradation-500);
 }
 
 .button_outline > .text {
