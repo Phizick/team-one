@@ -1,6 +1,7 @@
 .div {
   max-width: 344px;
   margin: 291px auto;
+  padding: 8px 16px;
 }
 
 .title {

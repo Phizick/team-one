@@ -27,6 +27,8 @@ export const Button = ({
       ? stylesButton.button_170
       : width === 48
       ? stylesButton.button_48
+      : width === 210
+      ? stylesButton.button_210
       : "";
   const directionImg = direction_img === "left" ? stylesButton.img_left : "";
 

@@ -91,6 +91,18 @@
   max-width: 170px;
 }
 
+
+.button_210 {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_210 > .text {
+  font-size: 13px;
+}
+
 .button_48 {
   padding: 0;
   display: flex;
@@ -108,6 +120,7 @@
   right: 0;
   left: 40px;
 }
+
 
 @media screen and (max-width: 300px) {
   .button {
