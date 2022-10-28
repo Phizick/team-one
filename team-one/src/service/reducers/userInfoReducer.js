@@ -9,7 +9,7 @@ export const userInfoReducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_USER_INFO: {
       return {
-        ...state,
+      ...state,
         userName: action.payload,
         openUserModal: true,
       };
@@ -17,8 +17,8 @@ export const userInfoReducer = (state = initialState, action) => {
     case CLOSE_USER_INFO: {
       return {
         ...state,
-        userName: state,
-        openUserModal: state,
+        userName: "",
+        openUserModal: false,
       };
     }
     default: {

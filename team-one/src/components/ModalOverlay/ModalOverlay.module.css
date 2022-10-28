@@ -1,17 +1,29 @@
 .modal_overlay {
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 0;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: 0.2s;
+  visibility: hidden;
 }
 
-.modal {
-  max-width: 432px;
-  background: var(--Gradation-100);
-  padding: 17px 16px;
+.modal_overlay_active {
+  opacity: 1;
+  overflow: hidden;
+  visibility: visible;
+}
+
+.modal_overlay_z {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
 }
