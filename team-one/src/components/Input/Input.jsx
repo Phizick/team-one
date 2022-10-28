@@ -2,15 +2,15 @@ import { useState } from "react";
 import styleInput from "./Input.module.css";
 import hideValueImg from "../../images/disabled_password.svg";
 import activeValueImg from "../../images/active_password.svg";
-export const Input = ({ typeInput, img, placeholder, type }) => {
+export const Input = ({ typeInput, img, placeholder, type,changeInput,value,...rest }) => {
   const classNames = require("classnames");
   const classInput = type === "sub" ? styleInput.input_sub : "";
   const classSpan = type === "sub" ? styleInput.span_sub : "";
-  const [value, setValue] = useState("");
   const [valueHide, setValueHide] = useState(true);
   return (
     <span className={classNames(styleInput.span, classSpan)}>
       <input
+      {...rest}
         className={classNames(styleInput.input, classInput)}
         type={
           typeInput !== "password"
@@ -19,7 +19,7 @@ export const Input = ({ typeInput, img, placeholder, type }) => {
             ? "text"
             : "password"
         }
-        onChange={(e) => setValue(e.target.value)}
+        onChange={changeInput}
         value={value}
         placeholder={placeholder}
       />

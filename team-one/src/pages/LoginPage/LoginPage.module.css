@@ -1,0 +1,38 @@
+.div {
+  max-width: 344px;
+  margin: 291px auto;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--Gradation-800);
+  margin: 0;
+  position: relative;
+  margin-bottom: 33.5px;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  bottom: -9.5px;
+  width: 64px;
+  height: 3px;
+  background: var(--Green-200);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.span {
+  margin-top: 40px;
+}

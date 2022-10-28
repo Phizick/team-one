@@ -1,5 +1,12 @@
 import stylesButton from "./Button.module.css";
-export const Button = ({ children, img, type, width, direction_img }) => {
+export const Button = ({
+  children,
+  img,
+  type,
+  width,
+  direction_img,
+  ...rest
+}) => {
   const classNames = require("classnames");
   const buttonBgColor =
     type === "primary"
@@ -25,6 +32,7 @@ export const Button = ({ children, img, type, width, direction_img }) => {
 
   return (
     <button
+      {...rest}
       className={classNames(stylesButton.button, buttonBgColor, buttonWidth)}
     >
       <p className={stylesButton.text}>{children}</p>
