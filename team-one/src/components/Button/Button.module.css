@@ -1,0 +1,125 @@
+.button {
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  padding: 20px 44px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 8px;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  transition: 0.2s;
+}
+
+.button:disabled {
+  background: var(--Gradation-500);
+  color: var(--Gradation-500);
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 40px;
+}
+
+.button_primary {
+  background: var(--Green-100);
+}
+
+.button_primary:hover {
+  background: var(--Green-200);
+}
+
+.button_primary:active {
+  background: var(--Green-400);
+}
+
+.button_secondary {
+  background: var(--Gradation-100);
+}
+
+.button_transparent {
+  color: var(--Gradation-100);
+  border: 1px solid var(--Gradation-100);
+}
+
+.button_outline {
+  border: 1px solid var(--Gradation-300);
+}
+
+.button_outline:hover {
+  border: 1px solid var(--Gradation-400);
+}
+
+.button_outline:active {
+  border: 1px solid var(--Gradation-500);
+}
+
+.button_outline > .text {
+  font-size: 14px;
+}
+
+.button_180 {
+  max-width: 180px;
+}
+
+.button_166 {
+  padding: 16px 40px 16px 20px;
+  max-width: 166px;
+}
+
+.button_166 > .text {
+  font-size: 14px;
+}
+
+.button_170 {
+  max-width: 170px;
+}
+
+.button_48 {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+}
+
+.button_48 > .img {
+  left: 14px;
+}
+
+.img_left {
+  right: 0;
+  left: 40px;
+}
+
+@media screen and (max-width: 300px) {
+  .button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+  .text {
+    display: none;
+  }
+  .img {
+    right: 10px;
+    left: 10px;
+  }
+}

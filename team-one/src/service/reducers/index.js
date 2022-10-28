@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux'
-import { testReducer } from './testReducer'
+import { combineReducers } from "redux";
+import { testReducer } from "./testReducer";
 export const rootReducer = combineReducers({
-    test: testReducer
-})
+  test: testReducer,
+});
