@@ -1,0 +1,6 @@
+.modal {
+  max-width: 432px;
+  background: var(--Gradation-100);
+  padding: 17px 16px;
+  z-index: 4;
+}

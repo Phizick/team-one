@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Gradation-100);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.profile_name {
+  margin: 0;
+}
+
+.button {
+  width: 210px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 12px 28px;
+    gap: 12px;
+    justify-content: start;
+  }
+  .profile_name {
+    display: none;
+  }
+  .button {
+    width: 100%;
+  }
+}

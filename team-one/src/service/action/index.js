@@ -1,1 +1,2 @@
-export const TEST_ACTION = 'TEST_ACTION'
+export const OPEN_USER_INFO = "OPEN_USER_INFO";
+export const CLOSE_USER_INFO = "CLOSE_USER_INFO";
