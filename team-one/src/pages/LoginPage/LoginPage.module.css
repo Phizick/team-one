@@ -1,6 +1,14 @@
+.flex {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .div {
   max-width: 344px;
-  margin: 291px auto;
+  margin: 0 auto;
   padding: 8px 16px;
 }
 

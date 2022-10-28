@@ -20,6 +20,7 @@ export const LoginPage = () => {
     return <Redirect to="/" />;
   }
   return (
+    <div className={stylesLoginPage.flex}>
     <div className={stylesLoginPage.div}>
       <h2 className={stylesLoginPage.title}>Вход</h2>
       <form className={stylesLoginPage.form} onSubmit={loginUserFunc}>
@@ -46,6 +47,7 @@ export const LoginPage = () => {
           <Button type="primary">Войти</Button>
         </span>
       </form>
+    </div>
     </div>
   );
 };
