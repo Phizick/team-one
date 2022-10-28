@@ -20,7 +20,7 @@
 }
 
 .button {
-  max-width: 210px;
+  width: 210px;
 }
 
 @media screen and (max-width: 768px) {
@@ -33,6 +33,6 @@
     display: none;
   }
   .button {
-    max-width: 100%;
+    width: 100%;
   }
 }
