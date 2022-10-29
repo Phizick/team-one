@@ -1,0 +1,20 @@
+.div {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 120%;
+  color: var(--Gradation-800);
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 25px;
+  }
+}
