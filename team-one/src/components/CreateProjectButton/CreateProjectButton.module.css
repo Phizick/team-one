@@ -18,6 +18,7 @@
   height: 100%;
   background: var(--Green-100);
   overflow: hidden;
+  z-index: 2;
 }
 
 .span::before {
@@ -52,7 +53,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  z-index: 1;
+  z-index: 2;
+
 }
 
 .text {

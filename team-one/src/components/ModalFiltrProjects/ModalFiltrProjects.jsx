@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { CLOSE_FILTR_PROJECTS } from "../../service/action";
+import { CLOSE_FILTR_PROJECTS_MODAL } from "../../service/action";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import styleModalFiltrProjects from "./ModalFiltrProjects.module.css";
 import { ModalHead } from "../ModalHead/ModalHead";
@@ -9,7 +9,7 @@ export const ModalFiltrProjects = () => {
   const { filtrProjects } = useSelector((state) => state.filtrProjects);
   const dispatch = useDispatch();
   const closeModal = () => {
-    dispatch({ type: CLOSE_FILTR_PROJECTS });
+    dispatch({ type: CLOSE_FILTR_PROJECTS_MODAL });
   };
   return ReactDOM.createPortal(
     <ModalOverlay isActive={filtrProjects} closeModal={closeModal}>

@@ -2,14 +2,14 @@ import { Button } from "../Button/Button";
 import styleHeader from "./Header.module.css";
 import user from "../../images/user.svg";
 import { useDispatch } from "react-redux";
-import { OPEN_USER_INFO } from "../../service/action";
+import { OPEN_USER_INFO_MODAL } from "../../service/action";
 import { Link } from "react-router-dom";
 export const Header = () => {
   const userLogin = window.localStorage.getItem("login");
   const dispatch = useDispatch();
   const getUserInfoFunction = () => {
     dispatch({
-      type: OPEN_USER_INFO,
+      type: OPEN_USER_INFO_MODAL,
       payload: userLogin,
     });
   };

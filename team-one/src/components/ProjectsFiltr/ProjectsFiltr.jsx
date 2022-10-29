@@ -4,11 +4,11 @@ import filtrImg from "../../images/filtr.svg";
 import styleProjectFiltr from "./ProjectsFiltr.module.css";
 import { Button } from "../Button/Button";
 import { useDispatch } from "react-redux";
-import { OPEN_FILTR_PROJECTS } from "../../service/action";
+import { OPEN_FILTR_PROJECTS_MODAL } from "../../service/action";
 export const ProjectsFiltr = () => {
   const dispatch = useDispatch();
   const openFiltrProjects = () => {
-    dispatch({ type: OPEN_FILTR_PROJECTS });
+    dispatch({ type: OPEN_FILTR_PROJECTS_MODAL });
   };
   return (
     <div className={styleProjectFiltr.div}>
@@ -28,7 +28,6 @@ export const ProjectsFiltr = () => {
           onClick={openFiltrProjects}
         ></Button>
       </span>
-      <p className={styleProjectFiltr.text}>Всего 4 проекта</p>
       <select className={styleProjectFiltr.select}>
         <option value="date_open" className={styleProjectFiltr.option}>
           По дате открытия

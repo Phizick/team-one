@@ -1,0 +1,22 @@
+.modal {
+  padding: 16px;
+  max-width: 432px;
+  min-height: 218px;
+  background: var(--Gradation-100);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  z-index: 3;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--Gradation-500);
+}
+
+.btn_delete {
+  background: var(--Red-100);
+  margin-bottom: 20px;
+}

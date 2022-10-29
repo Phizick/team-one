@@ -4,7 +4,7 @@ import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import styleModalUserInfo from "./ModalUserInfo.module.css";
 import logout from "../../images/exit.svg";
 import { Link } from "react-router-dom";
-import { CLOSE_USER_INFO } from "../../service/action";
+import { CLOSE_USER_INFO_MODAL } from "../../service/action";
 import { ModalHead } from "../ModalHead/ModalHead";
 const modal = document.getElementById("react-modal");
 export const ModalUserInfo = () => {
@@ -17,7 +17,7 @@ export const ModalUserInfo = () => {
   };
 
   const closeModal = () => {
-    dispatch({ type: CLOSE_USER_INFO });
+    dispatch({ type: CLOSE_USER_INFO_MODAL });
   };
   return ReactDOM.createPortal(
     <ModalOverlay

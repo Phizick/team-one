@@ -1,5 +1,5 @@
 import stylesModalOverlay from "./ModalOverlay.module.css";
-export const ModalOverlay = ({ children, isActive, closeModal, text }) => {
+export const ModalOverlay = ({ children, isActive, closeModal }) => {
   const classNames = require("classnames");
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {

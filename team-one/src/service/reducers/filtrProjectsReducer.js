@@ -1,4 +1,4 @@
-import { CLOSE_FILTR_PROJECTS, OPEN_FILTR_PROJECTS } from "../action";
+import { CLOSE_FILTR_PROJECTS_MODAL, OPEN_FILTR_PROJECTS_MODAL } from "../action";
 
 const initialState = {
   filtProjects: false,
@@ -6,12 +6,12 @@ const initialState = {
 
 export const filtrProjectsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case OPEN_FILTR_PROJECTS: {
+    case OPEN_FILTR_PROJECTS_MODAL: {
       return {
         filtrProjects: true,
       };
     }
-    case CLOSE_FILTR_PROJECTS: {
+    case CLOSE_FILTR_PROJECTS_MODAL: {
       return {
         filtProjects: false,
       };

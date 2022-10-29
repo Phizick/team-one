@@ -5,6 +5,7 @@ export const Button = ({
   type,
   width,
   direction_img,
+  classname,
   ...rest
 }) => {
   const classNames = require("classnames");
@@ -29,13 +30,15 @@ export const Button = ({
       ? stylesButton.button_48
       : width === 210
       ? stylesButton.button_210
+      : width === 32
+      ? stylesButton.button_32
       : "";
   const directionImg = direction_img === "left" ? stylesButton.img_left : "";
 
   return (
     <button
       {...rest}
-      className={classNames(stylesButton.button, buttonBgColor, buttonWidth)}
+      className={classNames(stylesButton.button, buttonBgColor, buttonWidth,classname)}
     >
       <p className={stylesButton.text}>{children}</p>
       {img ? (
