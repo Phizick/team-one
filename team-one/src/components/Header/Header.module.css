@@ -24,6 +24,10 @@
   width: 210px;
 }
 
+.link {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     padding: 12px 28px;

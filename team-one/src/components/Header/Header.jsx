@@ -3,6 +3,7 @@ import styleHeader from "./Header.module.css";
 import user from "../../images/user.svg";
 import { useDispatch } from "react-redux";
 import { OPEN_USER_INFO } from "../../service/action";
+import { Link } from "react-router-dom";
 export const Header = () => {
   const userLogin = window.localStorage.getItem("login");
   const dispatch = useDispatch();
@@ -19,9 +20,11 @@ export const Header = () => {
         <p className={styleHeader.profile_name}>{userLogin}</p>
       </div>
       <div className={styleHeader.button}>
+      <Link className={styleHeader.link} to="/recomendations">
         <Button type="primary" width={210}>
           Получить рекомендацию
         </Button>
+        </Link>
       </div>
     </header>
   );
