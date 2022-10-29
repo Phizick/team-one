@@ -13,7 +13,7 @@
   color: var(--Gradation-800);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 576px) {
   .title {
     font-size: 25px;
   }

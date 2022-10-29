@@ -1,5 +1,6 @@
 .modal {
-  max-width: 304px;
+  margin: 0 16px;
+  width: 320px;
   background: var(--Gradation-100);
   padding: 20px 16px;
   z-index: 4;
@@ -37,3 +38,4 @@
 .img {
   margin-right: 10px;
 }
+
