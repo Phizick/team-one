@@ -2,8 +2,7 @@
   z-index: 2;
   background: var(--Gradation-100);
   padding: 20px 16px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-radius: 16px;
   margin: 0 16px;
 }
 
@@ -39,6 +38,9 @@
 
 @media screen and (max-width: 576px) {
   .modal {
+    border-radius: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     position: absolute;
     bottom: 0;
     left: 0;
