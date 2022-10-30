@@ -25,6 +25,7 @@
 }
 
 .box_f {
+  min-width: 208px;
   text-align: center;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -60,7 +61,7 @@
   gap: 8px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .box_f {
     width: 100%;
   }
