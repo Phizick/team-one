@@ -1,0 +1,28 @@
+.div {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+.title {
+  font-size: 60px;
+  line-height: 120%;
+  margin: 0;
+}
+
+.text {
+  max-width: 600px;
+  margin: 0;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  width: 210px;
+  margin: 0 auto;
+}

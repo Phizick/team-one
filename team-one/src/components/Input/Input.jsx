@@ -9,6 +9,7 @@ export const Input = ({
   type,
   changeInput,
   value,
+  classname,
   ...rest
 }) => {
   const classNames = require("classnames");
@@ -22,10 +23,10 @@ export const Input = ({
     }
   };
   return (
-    <span className={classNames(styleInput.span, classSpan)}>
+    <span className={classNames(styleInput.span, classSpan, classname)}>
       <input
         {...rest}
-        className={classNames(styleInput.input, classInput)}
+        className={classNames(styleInput.input, classInput,classname)}
         type={
           typeInput !== "password"
             ? typeInput

@@ -10,8 +10,8 @@ import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { ProjectsList } from "../../components/ProjectsList/ProjectsList";
 import { ProjectsName } from "../../components/ProjectsName/ProjectsName";
 import plusImg from "../../images/plus.svg";
-import styleMyProjects from "./MyProjects.module.css";
-export const MyProjects = () => {
+import styleMyProjects from "./MyProjectsPage.module.css";
+export const MyProjectsPage = () => {
   return (
     <>
       <Header />

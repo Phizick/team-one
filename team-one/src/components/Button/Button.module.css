@@ -39,6 +39,7 @@
 }
 
 .button_primary {
+  padding: 16px 20px;
   background: var(--Green-100);
 }
 
