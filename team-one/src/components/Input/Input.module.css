@@ -5,12 +5,13 @@
   position: relative;
   background: var(--Gradation-200);
   border-radius: 8px;
+  border: 1px solid var(--Gradation-300);
 }
 
 .input {
   outline: none;
-  padding: 16px;
   display: flex;
+  padding: 13.5px 12px;
   width: 100%;
   border: 0;
   background: transparent;
@@ -22,12 +23,17 @@
 }
 
 .span_sub {
+  border: 0;
   border-radius: 0;
   background: transparent;
-  border-bottom: 4px solid var(--Green-200);
+  border-bottom: 4px solid var(--Gradation-400);
 }
 
 .input_sub {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 120%;
   background: transparent;
 }
 
@@ -37,6 +43,12 @@
   padding: 0;
   margin-right: 19px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .input_sub {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 400px) {

@@ -8,6 +8,7 @@
   align-items: center;
   background: var(--Gradation-100);
   margin-right: 16px;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 450px) {
@@ -17,5 +18,3 @@
     margin-right: 12px;
   }
 }
-
-
