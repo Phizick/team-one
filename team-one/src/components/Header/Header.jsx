@@ -20,10 +20,10 @@ export const Header = () => {
         <p className={styleHeader.profile_name}>{userLogin}</p>
       </div>
       <div className={styleHeader.button}>
-      <Link className={styleHeader.link} to="/recomendations">
-        <Button type="primary" width={210}>
-          Получить рекомендацию
-        </Button>
+        <Link className={styleHeader.link} to="/recommendations">
+          <Button type="primary" width={210}>
+            Получить рекомендацию
+          </Button>
         </Link>
       </div>
     </header>
