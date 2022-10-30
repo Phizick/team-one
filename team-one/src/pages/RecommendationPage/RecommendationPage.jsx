@@ -2,6 +2,7 @@ import { BackLink } from "../../components/BackLink/BackLink";
 import { Header } from "../../components/Header/Header";
 import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { ProgressBar } from "../../components/ProgressBar/ProgressBar";
+import {Footer} from '../../components/Footer/Footer';
 import { ProjectsName } from "../../components/ProjectsName/ProjectsName";
 import styleRecommendationPage from "./RecommendationPage.module.css";
 export const RecommendationPage = () => {
@@ -61,6 +62,7 @@ export const RecommendationPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
       <ModalUserInfo />
     </div>
   );
