@@ -73,7 +73,9 @@ export const SubjectsPie = ({ classname }) => {
             </div>
           </li>
         </ul>
-        <Pie data={data} />
+        <div className={styleSubjectsPie.container}>
+          <Pie data={data} />
+        </div>
       </div>
     </div>
   );
