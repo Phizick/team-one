@@ -31,7 +31,7 @@
   min-width: 62px;
   height: 40px;
   right: 8px;
-  background: #6f27ce;
+  background: #6a990a;
   border-radius: 4px;
   z-index: 2;
   word-spacing: 8px;
@@ -48,7 +48,7 @@
   top: 0;
   height: 56px;
   z-index: -1;
-  background: #d3bfed;
+  background: var(--Green-100);
 }
 
 .progress_green {
