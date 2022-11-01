@@ -94,15 +94,21 @@
 }
 
 .button_210 {
+  max-width: 210px;
   height: 48px;
   padding: 16px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  text-align: center;
 }
 
 .button_210 > .text {
   font-size: 13px;
+}
+
+.button_210 > .img {
+  right: 17px;
 }
 
 .button_48 {

@@ -10,6 +10,8 @@ import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { SearchFilters } from "../../components/SearchFilters/SearchFilters";
 import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
 import styleCreateProjectPage from "./CreateProjectPage.module.css";
+import { ExportData } from "../../components/ExportData/ExportData";
+
 export const CreateProjectPage = () => {
   const nameProject = window.localStorage.getItem("nameProject");
   const [nameInput, setNameInput] = useState("");
@@ -53,6 +55,7 @@ export const CreateProjectPage = () => {
         </div>
         <SubjectsPie classname={styleCreateProjectPage.grid_end} />
       </div>
+      <ExportData />
       <EmptyProject />
       <Footer />
       <ModalUserInfo />
