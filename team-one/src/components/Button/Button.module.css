@@ -91,10 +91,27 @@
 
 .button_170 {
   max-width: 170px;
+  height: 48px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.button_170 > .img {
+  right: 16px;
+}
+
+.button_170 > .text {
+  font-size: 13px;
+}
+
+.button_210 > .img {
+  right: 10px;
 }
 
 .button_210 {
-  max-width: 210px;
   height: 48px;
   padding: 16px 20px;
   display: flex;
@@ -105,10 +122,6 @@
 
 .button_210 > .text {
   font-size: 13px;
-}
-
-.button_210 > .img {
-  right: 17px;
 }
 
 .button_48 {

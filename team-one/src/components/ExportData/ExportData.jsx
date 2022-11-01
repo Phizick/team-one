@@ -16,7 +16,7 @@ export const ExportData = () => {
   ];
   return (
     <div className={styleExportData.div}>
-      <Button type="secondary" width={210} img={exportImg}>
+      <Button width={170} type="secondary" img={exportImg}>
         <CSVLink
           className={styleExportData.excel}
           data={data}
@@ -25,7 +25,7 @@ export const ExportData = () => {
           Экспорт в Excel
         </CSVLink>
       </Button>
-      <Button type="primary" width={210} img={exportImg}>
+      <Button width={170} type="primary" img={exportImg}>
         Экспорт в PDF
       </Button>
     </div>
