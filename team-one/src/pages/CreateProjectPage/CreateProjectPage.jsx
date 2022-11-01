@@ -11,20 +11,37 @@ import { SearchFilters } from "../../components/SearchFilters/SearchFilters";
 import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
 import styleCreateProjectPage from "./CreateProjectPage.module.css";
 export const CreateProjectPage = () => {
-  const [isActiveButton, setIsActiveButton] = useState(false)
+  const nameProject = window.localStorage.getItem("nameProject");
+  const [nameInput, setNameInput] = useState("");
+  const [isActiveButton, setIsActiveButton] = useState(false);
   const saveButton = () => {
-    setIsActiveButton(true)
-  }
+    if (isActiveButton === false) {
+      setIsActiveButton(true);
+      window.localStorage.setItem("buttonSave", true);
+    }
+    if (!nameProject) {
+      window.localStorage.setItem("nameProject", nameInput);
+    }
+  };
   return (
     <div>
       <Header isActiveButton={isActiveButton} />
       <div className={styleCreateProjectPage.flex}>
         <BackLink toLink="/" />
-        <Input
-          classname={styleCreateProjectPage.input}
-          type="sub"
-          placeholder="Введите название проекта"
-        />
+        {!nameProject ? (
+          <Input
+            changeInput={(e) => setNameInput(e.target.value)}
+            classname={styleCreateProjectPage.input}
+            type="sub"
+            placeholder="Введите название проекта"
+          />
+        ) : (
+          <>
+            <h2 className={styleCreateProjectPage.name_project}>
+              {nameProject}
+            </h2>
+          </>
+        )}
       </div>
       <SearchFilters saveButton={saveButton} />
       <div className={styleCreateProjectPage.grid}>

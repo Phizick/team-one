@@ -31,21 +31,18 @@ const labels = [
   "Сент. 2022",
 ];
 
-
 export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Молочная продукция',
+      text: "Молочная продукция",
     },
   },
 };
-
-
 
 const data = {
   labels,
