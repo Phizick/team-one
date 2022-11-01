@@ -10,14 +10,19 @@ import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { SearchFilters } from "../../components/SearchFilters/SearchFilters";
 import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
 import styleCreateProjectPage from "./CreateProjectPage.module.css";
+import { ExportData } from "../../components/ExportData/ExportData";
+import { useDispatch, useSelector } from "react-redux";
+import { OPEN_RECOMMENDATIONS } from "../../service/action";
+
 export const CreateProjectPage = () => {
+  const dispatch = useDispatch()
+  const {recommendations} = useSelector(state => state.openRecommendations)
+  console.log(recommendations)
   const nameProject = window.localStorage.getItem("nameProject");
   const [nameInput, setNameInput] = useState("");
-  const [isActiveButton, setIsActiveButton] = useState(false);
   const saveButton = () => {
-    if (isActiveButton === false) {
-      setIsActiveButton(true);
-      window.localStorage.setItem("buttonSave", true);
+    if (recommendations === false) {
+      dispatch({type: OPEN_RECOMMENDATIONS})
     }
     if (!nameProject) {
       window.localStorage.setItem("nameProject", nameInput);
@@ -25,7 +30,7 @@ export const CreateProjectPage = () => {
   };
   return (
     <div>
-      <Header isActiveButton={isActiveButton} />
+      <Header isActiveButton={recommendations} />
       <div className={styleCreateProjectPage.flex}>
         <BackLink toLink="/" />
         {!nameProject ? (
@@ -53,6 +58,7 @@ export const CreateProjectPage = () => {
         </div>
         <SubjectsPie classname={styleCreateProjectPage.grid_end} />
       </div>
+      <ExportData />
       <EmptyProject />
       <Footer />
       <ModalUserInfo />

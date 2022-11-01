@@ -2,6 +2,7 @@ import { FormInput } from "../FormInput/FormInput";
 import { Input } from "../Input/Input";
 import styleSearchFilters from "./SearchFilters.module.css";
 import { Button } from "../Button/Button";
+import { CheckBox } from "../CheckBox/CheckBox";
 export const SearchFilters = ({ saveButton }) => {
   return (
     <div className={styleSearchFilters.flex}>
@@ -35,6 +36,9 @@ export const SearchFilters = ({ saveButton }) => {
           <option>Алтайский край</option>
         </select>
       </FormInput>
+      <div className={styleSearchFilters.checkbox}>
+      <CheckBox/>
+      </div>
       <Button
         onClick={saveButton}
         classname={styleSearchFilters.btn}
