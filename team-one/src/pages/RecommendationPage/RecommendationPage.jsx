@@ -53,11 +53,11 @@ export const RecommendationPage = () => {
             </div>
           </div>
           <div className={styleRecommendationPage.bars}>
-            <ProgressBar city="Москва" money={3587500} percent={35} />
-            <ProgressBar city="Красноярск" money={3075000} percent={30} />
-            <ProgressBar city="Республтка Алтай" money={2050000} percent={20} />
-            <ProgressBar city="Санкт-Петербург" money={1025000} percent={10} />
-            <ProgressBar city="Ростовская Область" money={512500} percent={5} />
+            <ProgressBar backgroundGreen={true} city="Москва" money={3587500} percent={35} />
+            <ProgressBar backgroundGreen={true} city="Красноярск" money={3075000} percent={30} />
+            <ProgressBar backgroundGreen={true} city="Республтка Алтай" money={2050000} percent={20} />
+            <ProgressBar backgroundGreen={true} city="Санкт-Петербург" money={1025000} percent={10} />
+            <ProgressBar backgroundGreen={true} city="Ростовская Область" money={512500} percent={5} />
           </div>
         </div>
       </div>

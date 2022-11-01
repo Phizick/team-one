@@ -3,7 +3,7 @@ import { Input } from "../Input/Input";
 import calendarImg from "../../images/calendar.svg";
 import styleSearchFilters from "./SearchFilters.module.css";
 import { Button } from "../Button/Button";
-export const SearchFilters = () => {
+export const SearchFilters = ({saveButton}) => {
   return (
     <div className={styleSearchFilters.flex}>
       <FormInput classname={styleSearchFilters.label} text="Дата:">
@@ -38,8 +38,8 @@ export const SearchFilters = () => {
           <option>Продукты питания</option>
         </select>
       </FormInput>
-      <Button classname={styleSearchFilters.btn} type="primary">
-        Применить
+      <Button onClick={saveButton} classname={styleSearchFilters.btn} type="primary">
+        Сохранить
       </Button>
     </div>
   );

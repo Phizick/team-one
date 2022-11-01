@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BackLink } from "../../components/BackLink/BackLink";
 import { BarDate } from "../../components/BarDate/BarDate";
 import { ChannelBar } from "../../components/ChannelBar/ChannelBar";
@@ -10,9 +11,13 @@ import { SearchFilters } from "../../components/SearchFilters/SearchFilters";
 import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
 import styleCreateProjectPage from "./CreateProjectPage.module.css";
 export const CreateProjectPage = () => {
+  const [isActiveButton, setIsActiveButton] = useState(false)
+  const saveButton = () => {
+    setIsActiveButton(true)
+  }
   return (
     <div>
-      <Header />
+      <Header isActiveButton={isActiveButton} />
       <div className={styleCreateProjectPage.flex}>
         <BackLink toLink="/" />
         <Input
@@ -21,7 +26,7 @@ export const CreateProjectPage = () => {
           placeholder="Введите название проекта"
         />
       </div>
-      <SearchFilters />
+      <SearchFilters saveButton={saveButton} />
       <div className={styleCreateProjectPage.grid}>
         <div className={styleCreateProjectPage.bar}>
           <BarDate />

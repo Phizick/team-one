@@ -11,7 +11,7 @@
   z-index: 2;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 150%;
   color: var(--Gradation-800);
   overflow: hidden;
@@ -31,7 +31,7 @@
   min-width: 62px;
   height: 40px;
   right: 8px;
-  background: #6a990a;
+  background: #6F27CE;
   border-radius: 4px;
   z-index: 2;
   word-spacing: 8px;
@@ -49,7 +49,7 @@
   top: 0;
   height: 56px;
   z-index: -1;
-  background: var(--Green-100);
+  background: #D3BFED;
 }
 
 .progress_green {

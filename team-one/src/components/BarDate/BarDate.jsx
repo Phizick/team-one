@@ -31,16 +31,40 @@ const labels = [
   "Сент. 2022",
 ];
 
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Молочная продукция',
+    },
+  },
+};
+
+
+
 const data = {
   labels,
   datasets: [
     {
-      label: "Молочные продукты",
+      label: "Импорт",
       data: [
-        10000000, 13000000, 14500000, 10000000, 13000000, 13000000, 20000000,
+        10000000, 1300000, 14500000, 10000000, 1300000, 13000000, 20000000,
         10000000, 11000000,
       ],
-      backgroundColor: "#D3BFED",
+      backgroundColor: "#c1c1c1",
+    },
+    {
+      label: "Экспорт",
+      data: [
+        10000000, 1300000, 14500000, 1000000, 13000000, 130000, 20000000,
+        19000000, 1000000,
+      ],
+      backgroundColor: "#d1d1d1",
     },
   ],
 };
@@ -49,7 +73,7 @@ export const BarDate = () => {
   return (
     <div className={styleBarDate.bar}>
       <h2 className={styleBarDate.title}>По дате:</h2>
-      <Bar data={data} />
+      <Bar data={data} options={options} />
     </div>
   );
 };

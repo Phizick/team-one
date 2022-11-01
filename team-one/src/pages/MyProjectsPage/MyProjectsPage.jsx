@@ -5,7 +5,6 @@ import { CreateProjectButton } from "../../components/CreateProjectButton/Create
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { ModalDeleteProject } from "../../components/ModalDeleteProject/ModalDeleteProject";
-import { ModalFiltrProjects } from "../../components/ModalFiltrProjects/ModalFiltrProjects";
 import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { ProjectsList } from "../../components/ProjectsList/ProjectsList";
 import { ProjectsName } from "../../components/ProjectsName/ProjectsName";
@@ -21,7 +20,6 @@ export const MyProjectsPage = () => {
       <CreateProjectButton />
       <ProjectsList />
       <ModalUserInfo />
-      <ModalFiltrProjects />
       <ModalDeleteProject />
       <div className={styleMyProjects.div}>
         <div className={styleMyProjects.text}>
