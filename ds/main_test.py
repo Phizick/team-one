@@ -18,5 +18,5 @@ if __name__ == '__main__':
         okpd_tnved_dictionary=OkpdTnvedDictionary(config=config)
     )
     mongo = TeamOneMongoClient(config)
-    mongo.save_customs_stats(worker.get_df())
+    mongo.save_customs_stats(worker.get_df(fetch_pages_count=4))
     mongo.destroy()

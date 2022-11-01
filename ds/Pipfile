@@ -7,6 +7,7 @@ name = "pypi"
 python-dotenv = "*"
 pandas = "*"
 openpyxl = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [dev-packages]
 
