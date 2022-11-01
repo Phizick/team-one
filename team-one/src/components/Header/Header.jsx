@@ -4,7 +4,7 @@ import user from "../../images/user.svg";
 import { useDispatch } from "react-redux";
 import { OPEN_USER_INFO_MODAL } from "../../service/action";
 import { Link } from "react-router-dom";
-export const Header = () => {
+export const Header = ({isActiveButton}) => {
   const userLogin = window.localStorage.getItem("login");
   const dispatch = useDispatch();
   const getUserInfoFunction = () => {
@@ -20,11 +20,11 @@ export const Header = () => {
         <p className={styleHeader.profile_name}>{userLogin}</p>
       </div>
       <div className={styleHeader.button}>
-        <Link className={styleHeader.link} to="/recommendations">
+        {isActiveButton ? <Link className={styleHeader.link} to="/recommendations">
           <Button type="primary" width={210}>
             Получить рекомендацию
           </Button>
-        </Link>
+        </Link> : ''}
       </div>
     </header>
   );

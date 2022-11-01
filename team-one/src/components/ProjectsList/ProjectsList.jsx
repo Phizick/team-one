@@ -1,4 +1,3 @@
-import { ProjectsFiltr } from "../ProjectsFiltr/ProjectsFiltr";
 import styleProjectList from "./ProjectsList.module.css";
 import pointsImg from "../../images/points.svg";
 import { Button } from "../Button/Button";
@@ -11,7 +10,6 @@ export const ProjectsList = () => {
   };
   return (
     <div className={styleProjectList.list}>
-      <ProjectsFiltr />
       <ul className={styleProjectList.ul_titles}>
         <li className={styleProjectList.li_title}>Название</li>
         <li className={styleProjectList.li_title}>Дата создания</li>
@@ -23,10 +21,6 @@ export const ProjectsList = () => {
             <p className={styleProjectList.li_name_text}>
               Мясо и пищевые мясные полуфабрикаты
             </p>
-          </div>
-          <div className={styleProjectList.li_otrasl_box}>
-            <p className={styleProjectList.li_otrasl_text}>Отрасль: </p>
-            <p className={styleProjectList.li_otrasl}>Птица</p>
           </div>
           <div className={styleProjectList.li_data}>
             <p className={styleProjectList.li_data_text}>Создано: </p>
@@ -47,10 +41,6 @@ export const ProjectsList = () => {
             <p className={styleProjectList.li_name_text}>
               Мясо и пищевые мясные полуфабрикаты
             </p>
-          </div>
-          <div className={styleProjectList.li_otrasl_box}>
-            <p className={styleProjectList.li_otrasl_text}>Отрасль: </p>
-            <p className={styleProjectList.li_otrasl}>Птица</p>
           </div>
           <div className={styleProjectList.li_data}>
             <p className={styleProjectList.li_data_text}>Создано: </p>

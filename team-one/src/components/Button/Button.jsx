@@ -38,7 +38,12 @@ export const Button = ({
   return (
     <button
       {...rest}
-      className={classNames(stylesButton.button, buttonBgColor, buttonWidth,classname)}
+      className={classNames(
+        stylesButton.button,
+        buttonBgColor,
+        buttonWidth,
+        classname
+      )}
     >
       <p className={stylesButton.text}>{children}</p>
       {img ? (

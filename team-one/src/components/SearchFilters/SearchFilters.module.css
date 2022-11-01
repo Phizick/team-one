@@ -7,7 +7,16 @@
 }
 
 .date {
+  box-sizing: border-box;
   cursor: pointer;
+  min-width: 235px;
+  background-color: var(--Gradation-200);
+  background-image: url(../../images/calendar.svg);
+  background-size: auto;
+  background-repeat:no-repeat;
+  border-radius: 8px;
+  background-position: 94% 50%;
+
 }
 
 .select_group {
@@ -20,7 +29,7 @@
 .select {
   cursor: pointer;
   padding: 13.5px 12px;
-  width: 210px;
+  min-width: 210px;
   height: 48px;
   background: var(--Gradation-200);
   border: 1px solid var(--Gradation-300);

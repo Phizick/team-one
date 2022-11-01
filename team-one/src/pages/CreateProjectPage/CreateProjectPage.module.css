@@ -23,6 +23,14 @@
   width: 75%;
 }
 
+.name_project {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 120%;
+  color: var(--Gradation-800);
+}
+
 @media screen and (max-width: 1200px) {
   .bar {
     width: 100%;
