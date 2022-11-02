@@ -1,3 +1,5 @@
+import logging
+
 from dotenv import dotenv_values
 
 from customs_data_fetcher import CustomsDataFetcher
@@ -9,14 +11,13 @@ if __name__ == '__main__':
     config = dotenv_values(".env")
     worker = Worker(
         config=config,
-        import_data_fetcher=CustomsDataFetcher(
-            config=config, period_start="2021-12-31", period_end="2022-12-31", direction="ИМ"
-        ),
-        export_data_fetcher=CustomsDataFetcher(
-            config=config, period_start="2021-12-31", period_end="2022-12-31", direction="ЭК"
-        ),
-        okpd_tnved_dictionary=OkpdTnvedDictionary(config=config)
+        import_data_fetcher=CustomsDataFetcher(config=config),
+        export_data_fetcher=CustomsDataFetcher(config=config),
+        okpd_tnved_dictionary=OkpdTnvedDictionary(config=config),
+        log_level=logging.INFO
     )
     mongo = TeamOneMongoClient(config)
-    mongo.save_customs_stats(worker.get_df())
+    mongo.save_customs_stats(worker.get_df(year=2022))
+    mongo.save_customs_stats(worker.get_df(year=2021))
+    mongo.save_customs_stats(worker.get_df(year=2020))
     mongo.destroy()

@@ -1,17 +1,21 @@
 from typing import Optional, Dict
 
 import pandas as pd
-from pandas import DataFrame
 
 
 class OkpdTnvedDictionary:
-    __df: DataFrame
+    __dict_xls_path: str
+    __dict_xls_sheet_name: str
 
     def __init__(self, config: Dict[str, Optional[str]]):
-        f = open(config["OKVED_OKPD_DICTIONARY_XLS_PATH"], "rb")
-        self.__df = pd.read_excel(
+        self.__dict_xls_path = config["OKVED_OKPD_DICTIONARY_XLS_PATH"]
+        self.__dict_xls_sheet_name = config["OKVED_OKPD_DICTIONARY_XLS_SHEET_NAME"]
+
+    def get_df(self) -> pd.DataFrame:
+        f = open(self.__dict_xls_path, "rb")
+        df = pd.read_excel(
             io=f,
-            sheet_name=config["OKVED_OKPD_DICTIONARY_XLS_SHEET_NAME"],
+            sheet_name=self.__dict_xls_sheet_name,
             skiprows=4,
             header=None,
             names=["okpd", "tnved"],
@@ -19,11 +23,8 @@ class OkpdTnvedDictionary:
             usecols=[0, 2],
         )
 
-        self.__df["okpd"] = self.__df["okpd"].fillna(method='ffill')
-        self.__df["tnved"] = self.__df["tnved"].str.replace(" ", "")
+        df["okpd"] = df["okpd"].fillna(method='ffill')
+        df["tnved"] = df["tnved"].str.replace(" ", "")
 
-    def get_tnveds(self, okpd: str) -> DataFrame:
-        return self.__df.loc[self.__df["okpd"] == okpd, "tnved"]
+        return df
 
-    def get_okpd(self, tnved: str) -> DataFrame:
-        return self.__df.loc[self.__df["tnved"] == tnved, "okpd"]
