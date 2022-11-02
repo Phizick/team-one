@@ -54,8 +54,10 @@ class Worker:
         )
         tnved_okpd_dict = self.__okpd_tnved_dictionary.get_df()
 
-        import_export_df = import_df.set_index(["tnved_no", "tnved_name", "period", "subject"]).join(
-            other=export_df.set_index(["tnved_no", "tnved_name", "period", "subject"]),
+        import_export_df = import_df.set_index(
+            ["tnved_no", "tnved_measure_unit", "tnved_name", "period", "subject"]
+        ).join(
+            other=export_df.set_index(["tnved_no", "tnved_measure_unit", "tnved_name", "period", "subject"]),
             how="left",
             lsuffix="_import",
             rsuffix="_export"
@@ -73,6 +75,7 @@ class Worker:
 
     @staticmethod
     def __df_postprocess(df: pd.DataFrame):
-        df[["tnved_no", "tnved_name"]] = df["tnved"].str.split(pat=" - ", n=1, expand=True)
-        df.drop(columns=["tnved"], inplace=True)
+        df[["tnved_no", "tnved_str"]] = df["tnved"].str.split(pat=" - ", n=1, expand=True)
+        df[["tnved_measure_unit", "tnved_name"]] = df["tnved_str"].str.split(pat="-", n=1, expand=True)
+        df.drop(columns=["tnved", "tnved_str"], inplace=True)
         return df
