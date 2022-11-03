@@ -18,11 +18,15 @@ class CustomsDataFetcher:
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
     }
 
+    __thread_pool_executor: ThreadPoolExecutor
+
     def __init__(
             self,
-            config: Dict[str, Optional[str]]
+            config: Dict[str, Optional[str]],
+            thread_pool_executor: ThreadPoolExecutor
     ):
         self.__config = config
+        self.__thread_pool_executor = thread_pool_executor
 
     def get_df(
             self,
@@ -46,13 +50,13 @@ class CustomsDataFetcher:
             columns=["tnved", "period", "subject", "dei"]
         )
         fetch_pages = init_json["pageCount"] + 1 if fetch_pages_count is None else fetch_pages_count
-        executor = ThreadPoolExecutor(4)
         futures = {
-            executor.submit(
+            self.__thread_pool_executor.submit(
                 self.__load_page,
                 period_start,
                 period_end,
-                direction, page
+                direction,
+                page
             ): page for page in list(range(2, fetch_pages))
         }
         dataframes = [df]

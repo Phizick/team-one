@@ -1,4 +1,5 @@
 import logging
+from concurrent.futures import ThreadPoolExecutor
 
 from dotenv import dotenv_values
 
@@ -9,15 +10,17 @@ from worker import Worker
 
 if __name__ == '__main__':
     config = dotenv_values(".env")
+    executor = ThreadPoolExecutor(6)
+
     worker = Worker(
         config=config,
-        import_data_fetcher=CustomsDataFetcher(config=config),
-        export_data_fetcher=CustomsDataFetcher(config=config),
+        import_data_fetcher=CustomsDataFetcher(config=config, thread_pool_executor=executor),
+        export_data_fetcher=CustomsDataFetcher(config=config, thread_pool_executor=executor),
         okpd_tnved_dictionary=OkpdTnvedDictionary(config=config),
         log_level=logging.INFO
     )
+    dataframe = worker.get_df(period_start="2021-01-01", period_end="2021-12-31")
+
     mongo = TeamOneMongoClient(config)
-    mongo.save_customs_stats(worker.get_df(year=2022))
-    mongo.save_customs_stats(worker.get_df(year=2021))
-    mongo.save_customs_stats(worker.get_df(year=2020))
+    mongo.save_customs_stats(dataframe)
     mongo.destroy()
