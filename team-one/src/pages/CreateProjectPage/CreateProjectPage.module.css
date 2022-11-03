@@ -8,20 +8,11 @@
   width: 100%;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
-}
 
 .grid_end {
   width: 100%;
 }
 
-.bar {
-  width: 75%;
-}
 
 .name_project {
   font-style: normal;

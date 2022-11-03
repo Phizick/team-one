@@ -1,16 +1,17 @@
 import styleCheckBox from "./CheckBox.module.css";
 
-export const CheckBox = ({}) => {
+export const CheckBox = ({idElement,text,...rest}) => {
   return (
     <div className={styleCheckBox.checkbox}>
       <input
-        id="highload0"
+        id={idElement}
         className={styleCheckBox.checkbox_custom}
-        name="highload0"
+        name={idElement}
         type="checkbox"
+        {...rest}
       />
-      <label htmlFor="highload0" className={styleCheckBox.checkbox_label}>
-        Учитывать внутреннее производство
+      <label htmlFor={idElement} className={styleCheckBox.checkbox_label}>
+        {text}
       </label>
     </div>
   );
