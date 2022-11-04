@@ -1,3 +1,6 @@
+/**
+ *
+ */
 import { Link } from "react-router-dom";
 import stylesBackLink from "./BackLink.module.css";
 import arrowImg from "../../images/arrow_left.svg";
