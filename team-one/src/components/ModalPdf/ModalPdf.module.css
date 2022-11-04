@@ -1,0 +1,31 @@
+.modal {
+  box-sizing: border-box;
+  width: 800px;
+  background: var(--Gradation-100);
+  padding: 20px 16px;
+  z-index: 4;
+  background: var(--Gradation-100);
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.pdf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data {
+  margin-bottom: 8px;
+}
+
+.data_pie {
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+.data_pie > h2 {
+  display: none;
+}

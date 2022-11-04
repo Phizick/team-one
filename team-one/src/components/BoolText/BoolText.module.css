@@ -45,9 +45,38 @@
   border-radius: 4px;
 }
 
+.icons {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  font-weight: 500;
+  background: var(--Gradation-300);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: default;
+}
+
+.text {
+  width: 200px;
+  word-wrap: break-word;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--Gradation-300);
+  border-radius: 8px;
+  border: 1px solid var(--Gradation-300);
+  padding: 16px;
+}
 
 @media screen and (max-width: 576px) {
-    .p {
-        font-size: 14px;
-    }
+  .p {
+    font-size: 12px;
+  }
 }

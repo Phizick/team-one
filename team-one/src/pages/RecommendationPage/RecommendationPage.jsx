@@ -33,11 +33,31 @@ export const RecommendationPage = () => {
             </div>
           </div>
           <div className={styleRecommendationPage.bars}>
-            <BoolText bool={true} text="Ниша свободна" />
-            <BoolText bool={false} text="Есть инвестиционная программа" />
-            <BoolText bool={true} text="Есть программа по импортозамещению" />
-            <BoolText bool={false} text="Уровень возможности локализации" />
-            <BoolText bool={false} text="Риски не велики" />
+            <BoolText
+              promptText="Это значит - Ниша свободна"
+              bool={true}
+              text="Ниша свободна"
+            />
+            <BoolText
+              promptText="Это значит - Есть инвестиционная программа"
+              bool={false}
+              text="Есть инвестиционная программа"
+            />
+            <BoolText
+              promptText="Это значит - Есть программа по импортозамещению"
+              bool={true}
+              text="Есть программа по импортозамещению"
+            />
+            <BoolText
+              promptText="Это значит - Уровень возможности локализации"
+              bool={false}
+              text="Уровень возможности локализации"
+            />
+            <BoolText
+              promptText="Это значит - Риски не велики"
+              bool={false}
+              text="Риски не велики"
+            />
           </div>
         </div>
       </div>
