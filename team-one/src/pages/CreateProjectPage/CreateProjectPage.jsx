@@ -13,17 +13,15 @@ import styleCreateProjectPage from "./CreateProjectPage.module.css";
 import { ExportData } from "../../components/ExportData/ExportData";
 import { useDispatch, useSelector } from "react-redux";
 import { OPEN_RECOMMENDATIONS } from "../../service/action";
+import { ModalAllSubjects } from "../../components/ModalAllSubjects/ModalAllSubjects";
 
 export const CreateProjectPage = () => {
-  const dispatch = useDispatch()
-  const {recommendations} = useSelector(state => state.openRecommendations)
-  console.log(recommendations)
+  const dispatch = useDispatch();
+  const { recommendations } = useSelector((state) => state.openRecommendations);
   const nameProject = window.localStorage.getItem("nameProject");
   const [nameInput, setNameInput] = useState("");
   const saveButton = () => {
-    if (recommendations === false) {
-      dispatch({type: OPEN_RECOMMENDATIONS})
-    }
+    dispatch({ type: OPEN_RECOMMENDATIONS });
     if (!nameProject) {
       window.localStorage.setItem("nameProject", nameInput);
     }
@@ -62,6 +60,7 @@ export const CreateProjectPage = () => {
       <EmptyProject />
       <Footer />
       <ModalUserInfo />
+      <ModalAllSubjects/>
     </div>
   );
 };

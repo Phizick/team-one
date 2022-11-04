@@ -37,7 +37,7 @@ export const SearchFilters = ({ saveButton }) => {
         </select>
       </FormInput>
       <div className={styleSearchFilters.checkbox}>
-      <CheckBox/>
+      <CheckBox idElement="internalProduction" text="Учитывать внутреннее производство"/>
       </div>
       <Button
         onClick={saveButton}

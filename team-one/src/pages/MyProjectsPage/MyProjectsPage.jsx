@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BackLink } from "../../components/BackLink/BackLink";
 import { Button } from "../../components/Button/Button";
 import { CreateProjectButton } from "../../components/CreateProjectButton/CreateProjectButton";
 import { Footer } from "../../components/Footer/Footer";
@@ -14,9 +13,7 @@ export const MyProjectsPage = () => {
   return (
     <>
       <Header />
-      <ProjectsName title="Страница проектов">
-        <BackLink toLink="/" />
-      </ProjectsName>
+      <ProjectsName title="Страница проектов"/>
       <CreateProjectButton />
       <ProjectsList />
       <ModalUserInfo />
