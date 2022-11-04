@@ -10,7 +10,7 @@ from rest_scrapping.customs_data_fetcher import CustomsDataFetcher
 from rest_scrapping.worker import Worker
 
 if __name__ == '__main__':
-    config = dotenv_values(".env")
+    config = dotenv_values("../.env")
     LoggingConfig.init(logging.DEBUG)
     executor = ThreadPoolExecutor(6)
 

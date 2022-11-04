@@ -10,7 +10,7 @@ from csv_scrapping.worker import Worker
 from db.mongo_cient import TeamOneMongoClient
 
 if __name__ == '__main__':
-    config = dotenv_values(".env")
+    config = dotenv_values("../.env")
     LoggingConfig.init(logging.DEBUG)
     executor = ThreadPoolExecutor(6)
 
