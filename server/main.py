@@ -1,25 +1,32 @@
-from dotenv import dotenv_values
-from flask import Flask, jsonify
-from flask_restful import Resource, Api
+import os
 
+from flask import Flask, send_from_directory
+from flask_restful import Api
+
+from api.customs_stats_api import CustomsStatsApi
+from api.project_api import ProjectApi
+from config import config
 from json_encoder import JSONEncoder
-from mongo_cient import TeamOneMongoClient
 
-app = Flask(__name__)
-api = Api(app)
-config = dotenv_values(".env")
-mongo = TeamOneMongoClient(config)
+app = Flask(__name__, static_folder="react_app")
 app.json_encoder = JSONEncoder
 app.config['JSON_AS_ASCII'] = False
 
+api = Api(app)
+api_base = config["API_BASE"]
+api.add_resource(CustomsStatsApi, f'{api_base}/customs_stats')
+api.add_resource(ProjectApi, f'{api_base}/projects', f'{api_base}/projects/<user_id>')
 
-class TeamOneApi(Resource):
-    def get(self):
-        stats = mongo.get_customs_stats()
-        return jsonify(list(stats))
 
+# Serve React App
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
-api.add_resource(TeamOneApi, f'{config["API_BASE"]}/customs_stats')
 
 if __name__ == '__main__':
     app.run(debug=True)
