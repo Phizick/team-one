@@ -13,7 +13,7 @@ import styleCreateProjectPage from "./CreateProjectPage.module.css";
 import { ExportData } from "../../components/ExportData/ExportData";
 import { useDispatch, useSelector } from "react-redux";
 import { OPEN_RECOMMENDATIONS } from "../../service/action";
-import { AllSubjectsModal } from "../../components/AllSubjectsModal/AllSubjectsModal";
+import { ModalAllSubjects } from "../../components/ModalAllSubjects/ModalAllSubjects";
 
 export const CreateProjectPage = () => {
   const dispatch = useDispatch();
@@ -60,7 +60,7 @@ export const CreateProjectPage = () => {
       <EmptyProject />
       <Footer />
       <ModalUserInfo />
-      <AllSubjectsModal />
+      <ModalAllSubjects/>
     </div>
   );
 };

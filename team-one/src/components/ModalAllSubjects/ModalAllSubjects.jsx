@@ -5,14 +5,14 @@ import { FormInput } from "../FormInput/FormInput";
 import { Input } from "../Input/Input";
 import { ModalHead } from "../ModalHead/ModalHead";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
-import styleAllSubjectsModal from "./AllSubjectsModal.module.css";
+import styleAllSubjectsModal from "./ModalAllSubjects.module.css";
 import searchImg from "../../images/search.svg";
 import { useState } from "react";
 import { SubjectList } from "../SubjectsList/SubjectList";
 import { subjectsSelect } from "../../utils/data";
 const modal = document.getElementById("react-modal");
 
-export const AllSubjectsModal = () => {
+export const ModalAllSubjects = () => {
   const [nameSubject, setNameSubject] = useState("");
   const dispatch = useDispatch();
   const { subjectsModal,subjects} = useSelector((state) => state.subjects);
