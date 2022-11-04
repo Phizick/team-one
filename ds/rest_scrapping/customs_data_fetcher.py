@@ -18,11 +18,15 @@ class CustomsDataFetcher:
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
     }
 
+    __thread_pool_executor: ThreadPoolExecutor
+
     def __init__(
             self,
-            config: Dict[str, Optional[str]]
+            config: Dict[str, Optional[str]],
+            thread_pool_executor: ThreadPoolExecutor
     ):
         self.__config = config
+        self.__thread_pool_executor = thread_pool_executor
 
     def get_df(
             self,
@@ -35,7 +39,8 @@ class CustomsDataFetcher:
         init_response = requests.post(
             url=url,
             data=self.__get_payload(direction, period_end, period_start),
-            headers=self.__headers
+            headers=self.__headers,
+            timeout=60
         )
         if init_response.status_code != 200:
             raise RuntimeError(f'Error fetching 1st page {init_response.json()}')
@@ -46,14 +51,36 @@ class CustomsDataFetcher:
             columns=["tnved", "period", "subject", "dei"]
         )
         fetch_pages = init_json["pageCount"] + 1 if fetch_pages_count is None else fetch_pages_count
-        executor = ThreadPoolExecutor(4)
+        logging.info(f"Will fetch {fetch_pages} pages for period {period_start} - {period_end}, direction: {direction}")
         futures = {
-            executor.submit(
+            self.__thread_pool_executor.submit(
                 self.__load_page,
                 period_start,
                 period_end,
-                direction, page
+                direction,
+                page
             ): page for page in list(range(2, fetch_pages))
+        }
+        dataframes = [df]
+        failed_pages = []
+        for future in concurrent.futures.as_completed(futures):
+            page = futures[future]
+            try:
+                data = future.result()
+            except Exception as exc:
+                logging.error('%r generated an exception: %s' % (page, exc))
+                failed_pages.append(page)
+            else:
+                dataframes.append(data)
+
+        futures = {
+            self.__thread_pool_executor.submit(
+                self.__load_page,
+                period_start,
+                period_end,
+                direction,
+                page
+            ): page for page in failed_pages
         }
         dataframes = [df]
         for future in concurrent.futures.as_completed(futures):
@@ -80,7 +107,8 @@ class CustomsDataFetcher:
         response = requests.post(
             url=url,
             data=self.__get_payload(direction, period_end, period_start),
-            headers=self.__headers
+            headers=self.__headers,
+            timeout=60
         )
         if response.status_code != 200:
             raise RuntimeError(f'Error fetching 1st page {response.json()}')

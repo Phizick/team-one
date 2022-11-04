@@ -1,11 +1,11 @@
 import logging
-import sys
+import logging.handlers
 from typing import Dict, Optional
 
 import pandas as pd
 
-from customs_data_fetcher import CustomsDataFetcher
-from okpd_tnved_dictionary import OkpdTnvedDictionary
+from common.okpd_tnved_dictionary import OkpdTnvedDictionary
+from rest_scrapping.customs_data_fetcher import CustomsDataFetcher
 
 
 class Worker:
@@ -19,35 +19,26 @@ class Worker:
             config: Dict[str, Optional[str]],
             import_data_fetcher: CustomsDataFetcher,
             export_data_fetcher: CustomsDataFetcher,
-            okpd_tnved_dictionary: OkpdTnvedDictionary,
-            log_level: int
+            okpd_tnved_dictionary: OkpdTnvedDictionary
     ):
         self.__config = config
         self.__import_data_fetcher = import_data_fetcher
         self.__export_data_fetcher = export_data_fetcher
         self.__okpd_tnved_dictionary = okpd_tnved_dictionary
 
-        root = logging.getLogger()
-        root.setLevel(log_level)
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setLevel(log_level)
-        formatter = logging.Formatter('[%(threadName)s] %(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        handler.setFormatter(formatter)
-        root.addHandler(handler)
-
-    def get_df(self, year: int, fetch_pages_count=None):
+    def get_df(self, period_start: str, period_end: str, fetch_pages_count=None):
         import_df = self.__df_postprocess(
             df=self.__import_data_fetcher.get_df(
-                period_start=f"{year - 1}-12-31",
-                period_end=f"{year}-12-31",
+                period_start=period_start,
+                period_end=period_end,
                 direction="ИМ",
                 fetch_pages_count=fetch_pages_count
             )
         )
         export_df = self.__df_postprocess(
             df=self.__export_data_fetcher.get_df(
-                period_start=f"{year - 1}-12-31",
-                period_end=f"{year}-12-31",
+                period_start=period_start,
+                period_end=period_end,
                 direction="ЭК",
                 fetch_pages_count=fetch_pages_count
             )

@@ -5,12 +5,6 @@ name = "pypi"
 
 [packages]
 python-dotenv = "*"
-pandas = "*"
-openpyxl = "*"
-pymongo = {extras = ["srv"], version = "*"}
-numpy = "*"
-requests = "*"
-win-unicode-console = "*"
 
 [dev-packages]
 
