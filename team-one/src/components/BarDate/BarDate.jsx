@@ -44,7 +44,7 @@ export const options = {
   },
 };
 
-const data = {
+export const dataBar = {
   labels,
   datasets: [
     {
@@ -70,7 +70,7 @@ export const BarDate = () => {
   return (
     <div className={styleBarDate.bar}>
       <h2 className={styleBarDate.title}>По дате:</h2>
-      <Bar data={data} options={options} />
+      <Bar data={dataBar} options={options} />
     </div>
   );
 };

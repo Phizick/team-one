@@ -51,6 +51,10 @@ export const SubjectsPie = ({ classname }) => {
           ) : (
             <p className={styleSubjectsPie.p}>
               Вы еще не выбрали ни одного субьекта для данного проекта.
+              <br />
+              <span className={styleSubjectsPie.span}>
+                Для эскопрта в PDF используйте не больше 4х субъектов!
+              </span>
             </p>
           )}
         </div>

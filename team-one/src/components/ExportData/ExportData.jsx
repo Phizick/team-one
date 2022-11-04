@@ -2,7 +2,13 @@ import styleExportData from "./ExportData.module.css";
 import { CSVLink } from "react-csv";
 import exportImg from "../../images/export.svg";
 import { Button } from "../Button/Button";
+import { useDispatch } from "react-redux";
+import { OPEN_PDF_MODAL } from "../../service/action";
 export const ExportData = () => {
+  const dispatch = useDispatch()
+  const openModal = () => {
+    dispatch({type: OPEN_PDF_MODAL})
+  }
   const headers = [
     { label: "Ипорт", key: "import" },
     { label: "Экспорт", key: "export" },
@@ -25,7 +31,8 @@ export const ExportData = () => {
           Экспорт в Excel
         </CSVLink>
       </Button>
-      <Button width={170} type="primary" img={exportImg}>
+
+      <Button onClick={openModal}  width={170} type="primary" img={exportImg}>
         Экспорт в PDF
       </Button>
     </div>

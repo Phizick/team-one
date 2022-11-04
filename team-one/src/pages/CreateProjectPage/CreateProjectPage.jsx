@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BackLink } from "../../components/BackLink/BackLink";
 import { BarDate } from "../../components/BarDate/BarDate";
 import { ChannelBar } from "../../components/ChannelBar/ChannelBar";
@@ -14,8 +14,10 @@ import { ExportData } from "../../components/ExportData/ExportData";
 import { useDispatch, useSelector } from "react-redux";
 import { OPEN_RECOMMENDATIONS } from "../../service/action";
 import { ModalAllSubjects } from "../../components/ModalAllSubjects/ModalAllSubjects";
+import { ModalPdf } from "../../components/ModalPdf/ModalPdf";
 
 export const CreateProjectPage = () => {
+  const ref = useRef(null);
   const dispatch = useDispatch();
   const { recommendations } = useSelector((state) => state.openRecommendations);
   const nameProject = window.localStorage.getItem("nameProject");
@@ -60,7 +62,8 @@ export const CreateProjectPage = () => {
       <EmptyProject />
       <Footer />
       <ModalUserInfo />
-      <ModalAllSubjects/>
+      <ModalPdf reference={ref} />
+      <ModalAllSubjects />
     </div>
   );
 };
