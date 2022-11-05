@@ -72,7 +72,6 @@ export const CreateProjectPage = () => {
             <SubjectsPie classname={styleСreateProjectPage.grid_end} />
           </div>
           <ExportData />
-          <EmptyProject />
           <ModalPdf reference={ref} />
           <ModalAllSubjects />
         </>
