@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, send_from_directory
+from flask_cors import CORS
 from flask_restful import Api
 
 from api.customs_stats_api import CustomsStatsApi
@@ -9,6 +10,7 @@ from config import config
 from json_encoder import JSONEncoder
 
 app = Flask(__name__, static_folder="react_app")
+CORS(app)
 app.json_encoder = JSONEncoder
 app.config['JSON_AS_ASCII'] = False
 
