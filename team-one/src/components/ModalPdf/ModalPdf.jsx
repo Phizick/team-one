@@ -1,3 +1,15 @@
+/**
+ * @component
+ * Компонент Модального окна для экспортирования данных в PDF
+ * Отправляет dispatch на закрытие модального окна
+ * Экспортирование сделано на основе библиотеки React-To-PDF
+ * !!В компонент вкладывать не больше 4х субъектов РФ и экспортировать в PDF, после нажатия кнопки "СОХРАНИТЬ"
+ * @props
+ * reference - ссылка на DOM
+ * @returns
+ * возвращает разметку и графики: Bar -  с данными об импорте и экспорте, Pie - с выбранными субъектам
+ */
+
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CLOSE_PDF_MODAL } from "../../service/action";

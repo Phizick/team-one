@@ -1,3 +1,5 @@
+// Субъекты РФ
+
 export const subjectsSelect = [
   { name: "Алтайский край", id: "altay" },
   { name: "Амурская область", id: "amur" },

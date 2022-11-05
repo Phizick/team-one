@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент для создания нового проекта
+ * @returns
+ * возвращает разметку
+ * обертка Link библиотеки React-Router-Dom ведет на роут /create-project
+ */
+
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import plusImg from "../../images/plus.svg";

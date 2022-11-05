@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент для отрисовки рекомендаций
+ * @props
+ * text -  принимает string - имя рекомендации
+ * promptText - принимает string -  текст для подсказки
+ * bool - принимает true || false, true - галочка done, false - крестик failure
+ * @returns
+ * возвращает разметку одного элемента рекомендации
+ */
+
 import { useState } from "react";
 import imgDone from "../../images/done_green.svg";
 import imgCLose from "../../images/close_red.svg";

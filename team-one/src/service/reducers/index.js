@@ -1,3 +1,5 @@
+// Главный стор
+
 import { combineReducers } from "redux";
 import { deleteProjectReduce } from "./deleteProjectReducer";
 import { recommendationsReducer } from "./openRecommendationsReducer";

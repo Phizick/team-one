@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент список субъектов по началу буквы
+ * Отпраляет dispatch на добавление в список subjects и удаление из него
+ * @props
+ * data - принимает массив, пример: {name: 'Москва', id: 'moscow'}
+ * char - принимает string, первая буква списка
+ * @returns
+ * возвращает разметку субъектов
+ */
+
 import { useDispatch } from "react-redux";
 import { CheckBox } from "../CheckBox/CheckBox";
 import styleSubjectList from "./SubjectList.module.css";

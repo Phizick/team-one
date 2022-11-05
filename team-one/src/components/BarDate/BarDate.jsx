@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент содержаший график Bar билиотеки ChartJs
+ * Внутри компонента есть labels (Этикетки для графика), options(Настройки для графика и заголовок), dataBar(Данные для постройки графика)
+ * @returns
+ * возвращает разметку-обертку графика
+ */
+
 import { Bar } from "react-chartjs-2";
 import styleBarDate from "./BarDate.module.css";
 import {

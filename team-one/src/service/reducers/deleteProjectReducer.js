@@ -1,3 +1,5 @@
+// Редьюсер на окрытие/закрытие модального окна удаления проекта
+
 import { CLOSE_DELETE_PROJECT_MODAL, OPEN_DELETE_PROJECT_MODAL } from "../action";
 
 const initialState = {

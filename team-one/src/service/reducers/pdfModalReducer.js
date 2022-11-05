@@ -1,3 +1,5 @@
+// Редьюсер на окрытие/закрытие модального окна PDF
+
 import { CLOSE_PDF_MODAL, OPEN_PDF_MODAL } from "../action";
 
 const initialState = {

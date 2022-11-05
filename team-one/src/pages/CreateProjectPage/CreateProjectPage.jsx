@@ -1,3 +1,12 @@
+/**
+ * @component
+ * Компонент-страница Создания проекта
+ * dispatch на получение рекомендаций
+ * Название проекта отправляется в localStorage
+ * @returns
+ * возвращает разметку страницы, модальные окна, диграммы, фильтры
+ */
+
 import { useRef, useState } from "react";
 import { BackLink } from "../../components/BackLink/BackLink";
 import { BarDate } from "../../components/BarDate/BarDate";

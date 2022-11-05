@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент выбора субъектов РФ
+ * Получает с помощью Redux - subjects и отрисовывает список
+ * subjects - массив субъектов: {name: 'Москва', id: 'moscow'}
+ * @props
+ * @returns
+ * возвращает разметку полученных данных, загловки и кнопку Button
+ */
+
+
 import { useDispatch, useSelector } from "react-redux";
 import { OPEN_ALL_SUBJECTS_MODAL } from "../../service/action";
 import { Button } from "../Button/Button";

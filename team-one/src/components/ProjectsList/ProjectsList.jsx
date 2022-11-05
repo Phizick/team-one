@@ -1,3 +1,12 @@
+/**
+ * @component
+ * Компонент Списка моих проектов
+ * Отправляет при нажатии на ... dispatch на открытия модального окна -  удалить проект
+ *
+ * @returns
+ * возвращает разметку проектов
+ */
+
 import styleProjectList from "./ProjectsList.module.css";
 import pointsImg from "../../images/points.svg";
 import { Button } from "../Button/Button";

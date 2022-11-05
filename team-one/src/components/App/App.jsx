@@ -1,12 +1,9 @@
 /**
- * Главный компонент приложения
  * @component
+ * Главный компонент приложения
  * @returns
- * возвращает разметку страницы, содержащую компоненты
+ * возвращает страницы проекта по роутингу
  */
-
-
-
 
 import { Route, Switch } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";

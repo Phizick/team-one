@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент-страница авторизации
+ * При нажатии на кнопку"Войти", в localStorage записывается введный логин и пароль
+ * @returns
+ * возвращает разметку страницы, в случае успешного входа отпрявляется роут на /
+ */
+
 import { Input } from "../../components/Input/Input";
 import { Button } from "../../components/Button/Button";
 import stylesLoginPage from "./LoginPage.module.css";
@@ -21,33 +29,33 @@ export const LoginPage = () => {
   }
   return (
     <div className={stylesLoginPage.flex}>
-    <div className={stylesLoginPage.div}>
-      <h2 className={stylesLoginPage.title}>Вход</h2>
-      <form className={stylesLoginPage.form} onSubmit={loginUserFunc}>
-        <FormInput text="E-mail:">
-          <Input
-            typeInput="text"
-            value={email}
-            changeInput={(e) => setEmail(e.target.value)}
-            placeholder="Введите ваш e-mail"
-            required={true}
-          />
-        </FormInput>
-        <FormInput text="Пароль:">
-          <Input
-            typeInput="password"
-            value={password}
-            changeInput={(e) => setPassword(e.target.value)}
-            img={true}
-            placeholder="Введите пароль"
-            required={true}
-          />
-        </FormInput>
-        <span className={stylesLoginPage.span}>
-          <Button type="primary">Войти</Button>
-        </span>
-      </form>
-    </div>
+      <div className={stylesLoginPage.div}>
+        <h2 className={stylesLoginPage.title}>Вход</h2>
+        <form className={stylesLoginPage.form} onSubmit={loginUserFunc}>
+          <FormInput text="E-mail:">
+            <Input
+              typeInput="text"
+              value={email}
+              changeInput={(e) => setEmail(e.target.value)}
+              placeholder="Введите ваш e-mail"
+              required={true}
+            />
+          </FormInput>
+          <FormInput text="Пароль:">
+            <Input
+              typeInput="password"
+              value={password}
+              changeInput={(e) => setPassword(e.target.value)}
+              img={true}
+              placeholder="Введите пароль"
+              required={true}
+            />
+          </FormInput>
+          <span className={stylesLoginPage.span}>
+            <Button type="primary">Войти</Button>
+          </span>
+        </form>
+      </div>
     </div>
   );
 };

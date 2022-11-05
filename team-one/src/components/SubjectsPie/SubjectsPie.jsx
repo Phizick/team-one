@@ -1,3 +1,14 @@
+/**
+ * @component
+ * Компонент Круговая диаграмма
+ * Получает субъекты из стора и отпраляет поле name в labels
+ * data - данные для диаграммы
+ * @props
+ * classname - принимает object, указывается класс для компонента
+ * @returns
+ * возвращает разметку, в случае если субъекты не выбраны и их нет в сторе, отображает " Вы еще не выбрали ни одного субьекта для данного проекта. Для эскопрта в PDF используйте не больше 4х субъектов!" или Круговую диаграмму
+ */
+
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import styleSubjectsPie from "./SubjectsPie.module.css";

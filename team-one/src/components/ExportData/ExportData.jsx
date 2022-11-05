@@ -1,3 +1,12 @@
+/**
+ * @component
+ * Компонент для экспорта данных в Excel
+ * На основе библиотеки: React-csv
+ * Отравляет dispatch на открытия модального окна, для дальнейшего экспорта в PDF
+ * @returns
+ * возвращает разметку и обертку библиотеки React-csv
+ */
+
 import styleExportData from "./ExportData.module.css";
 import { CSVLink } from "react-csv";
 import exportImg from "../../images/export.svg";
@@ -5,10 +14,10 @@ import { Button } from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { OPEN_PDF_MODAL } from "../../service/action";
 export const ExportData = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const openModal = () => {
-    dispatch({type: OPEN_PDF_MODAL})
-  }
+    dispatch({ type: OPEN_PDF_MODAL });
+  };
   const headers = [
     { label: "Ипорт", key: "import" },
     { label: "Экспорт", key: "export" },
@@ -32,7 +41,7 @@ export const ExportData = () => {
         </CSVLink>
       </Button>
 
-      <Button onClick={openModal}  width={170} type="primary" img={exportImg}>
+      <Button onClick={openModal} width={170} type="primary" img={exportImg}>
         Экспорт в PDF
       </Button>
     </div>
