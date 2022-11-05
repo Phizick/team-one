@@ -18,7 +18,7 @@ import { Input } from "../../components/Input/Input";
 import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { SearchFilters } from "../../components/SearchFilters/SearchFilters";
 import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
-import styleCreateProjectPage from "./CreateProjectPage.module.css";
+import styleСreateProjectPage from "./CreateProjectPage.module.css";
 import { ExportData } from "../../components/ExportData/ExportData";
 import { useDispatch, useSelector } from "react-redux";
 import { OPEN_RECOMMENDATIONS } from "../../service/action";
@@ -26,6 +26,7 @@ import { ModalAllSubjects } from "../../components/ModalAllSubjects/ModalAllSubj
 import { ModalPdf } from "../../components/ModalPdf/ModalPdf";
 
 export const CreateProjectPage = () => {
+  const [isEmpty, setIsEmpty] = useState(true);
   const ref = useRef(null);
   const dispatch = useDispatch();
   const { recommendations } = useSelector((state) => state.openRecommendations);
@@ -36,43 +37,50 @@ export const CreateProjectPage = () => {
     if (!nameProject) {
       window.localStorage.setItem("nameProject", nameInput);
     }
+    setIsEmpty(false);
   };
   return (
     <div>
       <Header isActiveButton={recommendations} />
-      <div className={styleCreateProjectPage.flex}>
+      <div className={styleСreateProjectPage.flex}>
         <BackLink toLink="/" />
         {!nameProject ? (
           <Input
             changeInput={(e) => setNameInput(e.target.value)}
-            classname={styleCreateProjectPage.input}
+            classname={styleСreateProjectPage.input}
             type="sub"
             placeholder="Введите название проекта"
           />
         ) : (
           <>
-            <h2 className={styleCreateProjectPage.name_project}>
+            <h2 className={styleСreateProjectPage.name_project}>
               {nameProject}
             </h2>
           </>
         )}
       </div>
       <SearchFilters saveButton={saveButton} />
-      <div className={styleCreateProjectPage.grid}>
-        <div className={styleCreateProjectPage.bar}>
-          <BarDate />
-        </div>
-        <div className={styleCreateProjectPage.channel_bar}>
-          <ChannelBar />
-        </div>
-        <SubjectsPie classname={styleCreateProjectPage.grid_end} />
-      </div>
-      <ExportData />
-      <EmptyProject />
+      {isEmpty === false ? (
+        <>
+          <div className={styleСreateProjectPage.grid}>
+            <div className={styleСreateProjectPage.bar}>
+              <BarDate />
+            </div>
+            <div className={styleСreateProjectPage.channel_bar}>
+              <ChannelBar />
+            </div>
+            <SubjectsPie classname={styleСreateProjectPage.grid_end} />
+          </div>
+          <ExportData />
+          <EmptyProject />
+          <ModalPdf reference={ref} />
+          <ModalAllSubjects />
+        </>
+      ) : (
+        <EmptyProject />
+      )}
       <Footer />
       <ModalUserInfo />
-      <ModalPdf reference={ref} />
-      <ModalAllSubjects />
     </div>
   );
 };
