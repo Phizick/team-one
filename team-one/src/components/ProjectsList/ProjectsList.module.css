@@ -2,6 +2,22 @@
   margin-top: 20px;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--Gradation-800);
+  transition: 0.2s;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.link:last-child {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+
 .ul_titles {
   background: var(--Gradation-100);
   margin: 0;
@@ -29,11 +45,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.li_project:last-child {
-  border-bottom-right-radius: 16px;
-  border-bottom-left-radius: 16px;
 }
 
 .li_project_name_box {

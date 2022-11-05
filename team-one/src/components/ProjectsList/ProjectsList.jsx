@@ -25,7 +25,7 @@ export const ProjectsList = () => {
         <li className={styleProjectList.li_title}>Дата создания</li>
       </ul>
       <ul className={styleProjectList.ul_projects}>
-      <Link to="/my-project">
+      <Link className={styleProjectList.link} to="/my-project">
         <li className={styleProjectList.li_project}>
           <div className={styleProjectList.li_project_name_box}>
             <div className={styleProjectList.li_name}>М</div>
@@ -47,7 +47,7 @@ export const ProjectsList = () => {
           </div>
         </li>
         </Link>
-        <Link to="/my-project">
+        <Link className={styleProjectList.link} to="/my-project">
         <li className={styleProjectList.li_project}>
           <div className={styleProjectList.li_project_name_box}>
             <div className={styleProjectList.li_name}>М</div>
