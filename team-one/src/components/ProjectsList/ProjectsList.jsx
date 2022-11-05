@@ -25,14 +25,15 @@ export const ProjectsList = () => {
         <li className={styleProjectList.li_title}>Дата создания</li>
       </ul>
       <ul className={styleProjectList.ul_projects}>
-      <Link className={styleProjectList.link} to="/my-project">
         <li className={styleProjectList.li_project}>
-          <div className={styleProjectList.li_project_name_box}>
-            <div className={styleProjectList.li_name}>М</div>
-            <p className={styleProjectList.li_name_text}>
-              Мясо и пищевые мясные полуфабрикаты
-            </p>
-          </div>
+          <Link className={styleProjectList.link} to="/my-project">
+            <div className={styleProjectList.li_project_name_box}>
+              <div className={styleProjectList.li_name}>М</div>
+              <p className={styleProjectList.li_name_text}>
+                Мясо и пищевые мясные полуфабрикаты
+              </p>
+            </div>
+          </Link>
           <div className={styleProjectList.li_data}>
             <p className={styleProjectList.li_data_text}>Создано: </p>
             <p className={styleProjectList.li_date}>10.10.2022</p>
@@ -46,15 +47,15 @@ export const ProjectsList = () => {
             </span>
           </div>
         </li>
-        </Link>
-        <Link className={styleProjectList.link} to="/my-project">
         <li className={styleProjectList.li_project}>
-          <div className={styleProjectList.li_project_name_box}>
-            <div className={styleProjectList.li_name}>М</div>
-            <p className={styleProjectList.li_name_text}>
-              Мясо и пищевые мясные полуфабрикаты
-            </p>
-          </div>
+          <Link className={styleProjectList.link} to="/my-project">
+            <div className={styleProjectList.li_project_name_box}>
+              <div className={styleProjectList.li_name}>М</div>
+              <p className={styleProjectList.li_name_text}>
+                Мясо и пищевые мясные полуфабрикаты
+              </p>
+            </div>
+          </Link>
           <div className={styleProjectList.li_data}>
             <p className={styleProjectList.li_data_text}>Создано: </p>
             <p className={styleProjectList.li_date}>10.10.2022</p>
@@ -68,7 +69,6 @@ export const ProjectsList = () => {
             </span>
           </div>
         </li>
-        </Link>
       </ul>
     </div>
   );
