@@ -1,12 +1,9 @@
 /**
- * Главный компонент приложения
  * @component
+ * Главный компонент приложения
  * @returns
- * возвращает разметку страницы, содержащую компоненты
+ * возвращает страницы проекта по роутингу
  */
-
-
-
 
 import { Route, Switch } from "react-router-dom";
 import { ErrorPage } from "../../pages/ErrorPage/ErrorPage";
@@ -16,6 +13,7 @@ import { CreateProjectPage } from "../../pages/CreateProjectPage/CreateProjectPa
 import stlyesApp from "./App.module.css";
 import { MyProjectsPage } from "../../pages/MyProjectsPage/MyProjectsPage";
 import { RecommendationPage } from "../../pages/RecommendationPage/RecommendationPage";
+import { ProjectPage } from "../../pages/ProjectPage/ProjectPage";
 export const App = () => {
   return (
     <div className={stlyesApp.app}>
@@ -26,6 +24,9 @@ export const App = () => {
         <Route path="/login" exact={true}>
           <LoginPage />
         </Route>
+        <ProtectedRoute path="/my-project" exact={true}>
+          <ProjectPage/>
+        </ProtectedRoute>
         <ProtectedRoute path="/create-project" exact={true}>
           <CreateProjectPage />
         </ProtectedRoute>

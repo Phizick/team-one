@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент Модальное окно удаления проекта
+ * Отпраляет dispatch на закрытие модального окна
+ * @returns
+ * возвращает разметку и кнопки УДАЛИТЬ ПРОЕКТ и ОТМЕНА
+ */
+
 import ReactDOM from "react-dom";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";
 import { useDispatch, useSelector } from "react-redux";

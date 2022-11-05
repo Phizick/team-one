@@ -1,3 +1,10 @@
+/**
+ * @component
+ * Компонент подвал страницы
+ * @returns
+ * возвращает разметку footer
+ */
+
 import styleFooter from "./Footer.module.css";
 
 export const Footer = () => {

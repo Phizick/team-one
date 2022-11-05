@@ -1,3 +1,11 @@
+/**
+ * @component
+ * Компонент-страница начальная
+ * Содержит Header, Создание нового проекта, список проектов, футер
+ * @returns
+ * возвращает разметку страницы
+ */
+
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { CreateProjectButton } from "../../components/CreateProjectButton/CreateProjectButton";
@@ -13,7 +21,7 @@ export const MyProjectsPage = () => {
   return (
     <>
       <Header />
-      <ProjectsName title="Страница проектов"/>
+      <ProjectsName title="Страница проектов" />
       <CreateProjectButton />
       <ProjectsList />
       <ModalUserInfo />

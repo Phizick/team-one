@@ -1,3 +1,18 @@
+/**
+ * @component
+ * Компонент Кнопка
+ * @props
+ * children - принмает string - имя кнопки
+ * img - принимает string - ссылка на изображение
+ * type - принимает string, типы кнопки: primary, secondary,transparent, outline
+ * width - принимает number, типы ширины: по умолчанию width: 100%, width: 180 - 180px, width: 166 - 166px, width: 170 - 170px, width: 48 - 48px, width: 210 - 210px, width: 32 - 32px
+ * direction_img: принимает stirng, left - изображение слева, поумолчанию изображение внутри Button - справа, при условии если указан props img
+ * classname - принимает object, указывается класс для компонента
+ * ...rest - принимает остальные пропсы
+ * @returns
+ * возвращает разметку кнопки
+ */
+
 import stylesButton from "./Button.module.css";
 export const Button = ({
   children,

@@ -1,3 +1,5 @@
+// Редьюсер на получение рекомендаций
+
 import { OPEN_RECOMMENDATIONS } from "../action";
 
 const initialState = {

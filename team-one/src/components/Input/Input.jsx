@@ -1,3 +1,19 @@
+/**
+ * @component
+ * Компонент Input
+ * @props
+ * typeInput - принимает string, если строка password то появляется кнока глазка для отображение и скрытия пароля, а также принимает стандартные типы input
+ * img - принимает string - ссылка на изображение
+ * placeholder - принимает string - текст placeholder для input
+ * type - принимает string - sub нижний бордер для input
+ * changeInput - принимает функцию - используется для работы с value input
+ * value - принимает string, number - значение ввода пользователя
+ * classname - принимает object, указывается класс для компонента
+ * ...rest - принимает остальные пропсы
+ * @returns
+ * возвращает стилизованый input
+ */
+
 import { useState } from "react";
 import styleInput from "./Input.module.css";
 import hideValueImg from "../../images/disabled_password.svg";
@@ -26,7 +42,7 @@ export const Input = ({
     <span className={classNames(styleInput.span, classSpan, classname)}>
       <input
         {...rest}
-        className={classNames(styleInput.input, classInput,classname)}
+        className={classNames(styleInput.input, classInput, classname)}
         type={
           typeInput !== "password"
             ? typeInput

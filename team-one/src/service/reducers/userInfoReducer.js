@@ -1,3 +1,5 @@
+// Редьюсер на окрытие/закрытие модального окна иформации о пользователе
+
 import { CLOSE_USER_INFO_MODAL, OPEN_USER_INFO_MODAL } from "../action";
 
 const initialState = {

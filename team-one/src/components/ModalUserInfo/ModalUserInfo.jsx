@@ -1,3 +1,12 @@
+/**
+ * @component
+ * Компонент Модального информации о пользователе
+ * Отправляет dispatch на закрытие модального окна
+ * @returns
+ * возвращает разметку и ссылку на выход из профиля
+ * При выходе из профиля - удаляются данные логина и пароля из localStorage
+ */
+
 import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ModalOverlay } from "../ModalOverlay/ModalOverlay";

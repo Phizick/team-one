@@ -1,3 +1,10 @@
+/**
+ * @component
+ * Компонент-страница 404
+ * @returns
+ * возвращает разметку страницы и ссылку на роут /
+ */
+
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import stylesErrorPage from "./ErrorPage.module.css";

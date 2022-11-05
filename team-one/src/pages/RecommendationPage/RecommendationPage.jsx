@@ -1,3 +1,10 @@
+/**
+ * @component
+ * Компонент-страница рекомендации
+ * !При перезагрузки страницы происходит роут на /
+ * @returns
+ * возвращает разметку и компоненты BoolText
+ */
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { BackLink } from "../../components/BackLink/BackLink";

@@ -1,3 +1,12 @@
+/**
+ * @component
+ * Компонент Фильтры по поиску Анализа ниш
+ * @props
+ * saveButton - принимает функцию для атрибута onClick
+ * @returns
+ * возвращает разметку компонентов FormInput,Input, Button и select
+ */
+
 import { FormInput } from "../FormInput/FormInput";
 import { Input } from "../Input/Input";
 import styleSearchFilters from "./SearchFilters.module.css";
@@ -37,7 +46,10 @@ export const SearchFilters = ({ saveButton }) => {
         </select>
       </FormInput>
       <div className={styleSearchFilters.checkbox}>
-      <CheckBox idElement="internalProduction" text="Учитывать внутреннее производство"/>
+        <CheckBox
+          idElement="internalProduction"
+          text="Учитывать внутреннее производство"
+        />
       </div>
       <Button
         onClick={saveButton}
