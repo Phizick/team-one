@@ -1,0 +1,35 @@
+.div {
+  /*  */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
+  /*  */
+  box-sizing: border-box;
+  padding: 16px;
+  margin-top: 20px;
+  min-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  min-height: 80px;
+  background: var(--Gradation-800);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+
+.excel {
+  text-decoration: none;
+  color: #000;
+}
+
+/*  */
+@media screen and (max-width: 500px) {
+  .div {
+    min-width: 300px;
+  }
+}
+/*  */

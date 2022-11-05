@@ -8,10 +8,16 @@
   align-items: flex-start;
   border-radius: 8px;
   gap: 8px;
-
   cursor: pointer;
   width: 100%;
   position: relative;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+.button:disabled {
+  background: var(--Gradation-500);
+  color: var(--Gradation-500);
 }
 
 .text {
@@ -33,7 +39,16 @@
 }
 
 .button_primary {
+  padding: 16px 20px;
   background: var(--Green-100);
+}
+
+.button_primary:hover {
+  background: var(--Green-200);
+}
+
+.button_primary:active {
+  background: var(--Green-400);
 }
 
 .button_secondary {
@@ -47,6 +62,14 @@
 
 .button_outline {
   border: 1px solid var(--Gradation-300);
+}
+
+.button_outline:hover {
+  border: 1px solid var(--Gradation-400);
+}
+
+.button_outline:active {
+  border: 1px solid var(--Gradation-500);
 }
 
 .button_outline > .text {
@@ -68,6 +91,37 @@
 
 .button_170 {
   max-width: 170px;
+  height: 48px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.button_170 > .img {
+  right: 16px;
+}
+
+.button_170 > .text {
+  font-size: 13px;
+}
+
+.button_210 > .img {
+  right: 10px;
+}
+
+.button_210 {
+  height: 48px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.button_210 > .text {
+  font-size: 13px;
 }
 
 .button_48 {
@@ -83,9 +137,28 @@
   left: 14px;
 }
 
+.button_32 {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.button_32 > .img {
+  left: 5px;
+}
+
 .img_left {
   right: 0;
   left: 40px;
+}
+
+@media screen and (max-width: 321px) {
+  .button_210 {
+    padding: 12px 16px;
+  }
 }
 
 @media screen and (max-width: 300px) {

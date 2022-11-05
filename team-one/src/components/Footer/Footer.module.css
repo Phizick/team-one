@@ -1,0 +1,11 @@
+.footer {
+  padding: 21.5px 16px;
+  background-color: var(--Gradation-800);
+  border-radius: 16px;
+  color: var(--Gradation-300);
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
