@@ -67,6 +67,10 @@ export const SearchFilters = ({
           <option value="МАШИНЫ ДЛЯ ПРИЕМА, ПРЕОБРАЗОВАНИЯ И ПЕРЕДАЧИ ИЛИ ВОССТАНОВЛЕНИЯ ГОЛОСА,  ИЗОБРАЖЕНИЙ ИЛИ ДРУГИХ ДАННЫХ, ВКЛЮЧАЯ КОММУТАЦИОННЫЕ УСТРОЙСТВА         И МАРШРУТИЗАТОРЫ">
             Коммутаторы и маршутизаторы
           </option>
+          <option value="ПРОЧАЯ ОБУВЬ НА ПОДОШВЕ ИЗ РЕЗИНЫ ИЛИ ПЛАСТМАССЫ">
+            Прочная обувь на подошве из резины
+          </option>
+          
         </select>
       </FormInput>
       <FormInput classname={styleSearchFilters.label} text="Субъект:">
@@ -83,6 +87,10 @@ export const SearchFilters = ({
             Санкт Петербург
           </option>
           <option value="29000 - КАЛУЖСКАЯ ОБЛАСТЬ">Калужская область</option>
+          <option value="88000 - РЕСПУБЛИКА МАРИЙ ЭЛ">Республика  Марий Эл</option>
+          <option value="92000 - РЕСПУБЛИКА ТАТАРСТАН (ТАТАРСТАН)">Республика Татарстан</option>
+          <option value="28000 - ТВЕРСКАЯ ОБЛАСТЬ">Тверская область</option>
+          <option value="36000 - САМАРСКАЯ ОБЛАСТЬ">Самарская область</option>
         </select>
       </FormInput>
       <div className={styleSearchFilters.checkbox}>

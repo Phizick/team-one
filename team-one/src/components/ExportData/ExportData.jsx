@@ -31,8 +31,8 @@ export const ExportData = ({ importD, exportD, monthD, unit }) => {
 
   const data = [
     {
-      import: `${importD} ${unit}`,
-      export: `${exportD} ${unit}`,
+      import: `${importD} ${unit === 'ШТ' ? unit : 'ПАР'}`,
+      export: `${exportD} ${unit === 'ШТ' ? unit : 'ПАР'}`,
       month: `${monthD}`,
     },
   ];
