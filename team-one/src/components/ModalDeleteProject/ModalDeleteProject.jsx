@@ -26,6 +26,7 @@ export const ModalDeleteProject = ({ id }) => {
 
   const deleteProjectF = () => {
     dispatch(deleteProjectR(id));
+    closeModal()
   };
   return ReactDOM.createPortal(
     <ModalOverlay isActive={deleteProject} closeModal={closeModal}>
