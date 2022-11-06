@@ -27,54 +27,37 @@ ChartJS.register(
   Legend
 );
 
-const labels = [
-  "Янв. 2022",
-  "Фев. 2022",
-  "Мар. 2022",
-  "Апр. 2022",
-  "Май. 2022",
-  "Июнь. 2022",
-  "Июл. 2022",
-  "Авг. 2022",
-  "Сент. 2022",
-];
+export const BarDate = ({ dei_export, dei_import, tnved_name }) => {
+  const labels = ["Янв 2022"];
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: tnved_name,
+      },
     },
-    title: {
-      display: true,
-      text: "Молочная продукция",
-    },
-  },
-};
+  };
 
-export const dataBar = {
-  labels,
-  datasets: [
-    {
-      label: "Импорт",
-      data: [
-        10000000, 1300000, 14500000, 10000000, 1300000, 13000000, 20000000,
-        10000000, 11000000,
-      ],
-      backgroundColor: "#c1c1c1",
-    },
-    {
-      label: "Экспорт",
-      data: [
-        10000000, 1300000, 14500000, 1000000, 13000000, 130000, 20000000,
-        19000000, 1000000,
-      ],
-      backgroundColor: "#d1d1d1",
-    },
-  ],
-};
-
-export const BarDate = () => {
+  const dataBar = {
+    labels,
+    datasets: [
+      {
+        label: "Импорт",
+        data: [dei_import],
+        backgroundColor: "#c1c1c1",
+      },
+      {
+        label: "Экспорт",
+        data: [dei_export],
+        backgroundColor: "#d1d1d1",
+      },
+    ],
+  };
   return (
     <div className={styleBarDate.bar}>
       <h2 className={styleBarDate.title}>По дате:</h2>

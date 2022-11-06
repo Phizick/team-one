@@ -2,22 +2,31 @@
  * @component
  * Компонент-страница начальная
  * Содержит Header, Создание нового проекта, список проектов, футер
+ * Получает id из localStorage и отправляет запрос на получение проектов по id
  * @returns
  * возвращает разметку страницы
  */
 
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { CreateProjectButton } from "../../components/CreateProjectButton/CreateProjectButton";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
-import { ModalDeleteProject } from "../../components/ModalDeleteProject/ModalDeleteProject";
 import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { ProjectsList } from "../../components/ProjectsList/ProjectsList";
 import { ProjectsName } from "../../components/ProjectsName/ProjectsName";
 import plusImg from "../../images/plus.svg";
+import { getProjects } from "../../service/action/getProjects";
 import styleMyProjects from "./MyProjectsPage.module.css";
 export const MyProjectsPage = () => {
+  const id = window.localStorage.getItem("id");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProjects(id));
+  });
+
   return (
     <>
       <Header />
@@ -25,7 +34,6 @@ export const MyProjectsPage = () => {
       <CreateProjectButton />
       <ProjectsList />
       <ModalUserInfo />
-      <ModalDeleteProject />
       <div className={styleMyProjects.div}>
         <div className={styleMyProjects.text}>
           <h2 className={styleMyProjects.title}>Не нашли нужного проекта?</h2>

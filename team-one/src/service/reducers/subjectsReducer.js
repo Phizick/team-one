@@ -1,8 +1,8 @@
-// Редьюсер на окрытие/закрытие модального окна субъектов и добавления/удаления субъекта 
-
+// Редьюсер на окрытие/закрытие модального окна субъектов и добавления/удаления субъекта
 
 import {
   ADD_SUBJECTS,
+  CLEAR_SUBJECTS,
   CLOSE_ALL_SUBJECTS_MODAL,
   DELETE_SUBJECTS,
   OPEN_ALL_SUBJECTS_MODAL,
@@ -36,16 +36,19 @@ export const subjectsReducer = (state = initialState, action) => {
     }
     case DELETE_SUBJECTS: {
       const newState = { ...state };
-      const indexIngredient = newState.subjects.findIndex(
+      const indexSubject = newState.subjects.findIndex(
         (item) => item.id === action.indx
       );
-      if (indexIngredient !== -1) {
-        newState.subjects.splice(indexIngredient, 1);
+      if (indexSubject !== -1) {
+        newState.subjects.splice(indexSubject, 1);
       }
       return {
         ...state,
         subjects: [...newState.subjects],
       };
+    }
+    case CLEAR_SUBJECTS: {
+      return { ...state, subjects: [] };
     }
     default: {
       return state;

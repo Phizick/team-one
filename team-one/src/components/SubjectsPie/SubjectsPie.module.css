@@ -54,7 +54,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--Gradation-800);
   border-radius: 4px;
 }
 

@@ -3,6 +3,11 @@
  * Компонент для экспорта данных в Excel
  * На основе библиотеки: React-csv
  * Отравляет dispatch на открытия модального окна, для дальнейшего экспорта в PDF
+ * @props
+ * importD - принимает number || null - колличество импортированных ШТУК
+ * exportD - принимает number || null - колличество экспортированных ШТУК
+ * monthD - принимает string, например "01 2022" - янверь 2022
+ * unit - принимает string, например "ШТ"
  * @returns
  * возвращает разметку и обертку библиотеки React-csv
  */
@@ -13,7 +18,7 @@ import exportImg from "../../images/export.svg";
 import { Button } from "../Button/Button";
 import { useDispatch } from "react-redux";
 import { OPEN_PDF_MODAL } from "../../service/action";
-export const ExportData = () => {
+export const ExportData = ({ importD, exportD, monthD, unit }) => {
   const dispatch = useDispatch();
   const openModal = () => {
     dispatch({ type: OPEN_PDF_MODAL });
@@ -25,9 +30,11 @@ export const ExportData = () => {
   ];
 
   const data = [
-    { import: "10.500.500", export: "10.500.500", month: "Янв. 2022" },
-    { import: "10.500.500", export: "10.500.500", month: "Фев. 2022" },
-    { import: "10.500.500", export: "10.500.500", month: "Мар. 2022" },
+    {
+      import: `${importD} ${unit}`,
+      export: `${exportD} ${unit}`,
+      month: `${monthD}`,
+    },
   ];
   return (
     <div className={styleExportData.div}>

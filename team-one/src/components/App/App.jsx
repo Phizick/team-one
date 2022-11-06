@@ -24,7 +24,7 @@ export const App = () => {
         <Route path="/login" exact={true}>
           <LoginPage />
         </Route>
-        <ProtectedRoute path="/my-project" exact={true}>
+        <ProtectedRoute path="/my-project/:id" exact={true}>
           <ProjectPage/>
         </ProtectedRoute>
         <ProtectedRoute path="/create-project" exact={true}>

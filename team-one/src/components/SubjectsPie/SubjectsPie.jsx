@@ -23,14 +23,8 @@ export const SubjectsPie = ({ classname }) => {
     labels,
     datasets: [
       {
-        data: [35, 30, 20, 10],
-        backgroundColor: [
-          "#8547D7",
-          "#4780D7",
-          "#A7D747",
-          "#E99535",
-          "#D75347",
-        ],
+        data: subjects.map((i) => i?.percent),
+        backgroundColor: subjects.map((i) => i?.bg),
       },
     ],
   };

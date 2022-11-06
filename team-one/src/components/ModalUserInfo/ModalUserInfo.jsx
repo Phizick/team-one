@@ -22,6 +22,7 @@ export const ModalUserInfo = () => {
   const logoutUser = () => {
     window.localStorage.removeItem("login");
     window.localStorage.removeItem("password");
+    window.localStorage.removeItem("id");
     closeModal();
   };
 
