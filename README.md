@@ -19,6 +19,10 @@
 - React-to-PDF,
 - React-CSV,
 - uuid
+
+* Сборка
+    * npm i
+    * npm run build
 ### 
 
 ### DS
@@ -54,6 +58,7 @@
     * CUSTOMS_STATS_COLLECTION
     * PROJECT_COLLECTION
     * API_BASE
+* Раздача статики фронтенда из папки server/react_app
 ###
 
 ### DB
