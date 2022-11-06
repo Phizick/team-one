@@ -49,8 +49,10 @@
     * Python 3.7
     * Flask
     * Docker
+* Раздача статики фронтенда из папки server/react_app
+    * CORS настроен на любой origin, так что это не обязательно
 * Запуск
-    * cd ds/server
+    * cd ./server
     * docker build -t team-one-server .
     * docker run -d -p 80:8080 -it --rm --name team-one-server-container team-one-server
 * .env:
@@ -59,7 +61,6 @@
     * CUSTOMS_STATS_COLLECTION
     * PROJECT_COLLECTION
     * API_BASE
-* Раздача статики фронтенда из папки server/react_app
 ###
 
 ### DB
@@ -70,6 +71,8 @@
 - Разбить БД на более мелкие и сформировать общую схему для ускорения работы
 - Сделать возможной гибкую настройку статистики по заданным параметрам
 - Добавить критерии для анализа рекомендаций в соответсвии с документацией к проекту
+- Добавить авторизацию, настроить HTTPS
+- Добавить анализ существующего производства и смапить на импорт (есть наработки в ветке feature/manufacture_scrapping - файл manufacture_scrapping.ipynb)
 
 ## Ссылка на GitHubPages: 
 [Деплой](http://37.230.196.81/)
