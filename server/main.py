@@ -19,7 +19,7 @@ app.config['JSON_AS_ASCII'] = False
 api = Api(app)
 api_base = config["API_BASE"]
 api.add_resource(CustomsStatsApi, f'{api_base}/customs_stats')
-api.add_resource(ProjectApi, f'{api_base}/projects', f'{api_base}/projects/<user_id>')
+api.add_resource(ProjectApi, f'{api_base}/projects', f'{api_base}/projects/<user_id>', methods=['GET', 'POST', 'DELETE'])
 
 
 # Serve React App
