@@ -12,9 +12,6 @@ parser.add_argument("dateFrom")
 parser.add_argument("about")
 parser.add_argument("subject")
 
-del_parser = reqparse.RequestParser()
-del_parser.add_argument("project_id")
-
 
 class ProjectApi(Resource):
     __repository = ProjectRepository()
@@ -32,9 +29,5 @@ class ProjectApi(Resource):
         return jsonify(inserted_project.inserted_id)
 
     def delete(self):
-        args = del_parser.parse_args()
-        if args["project_id"] is None:
-            abort(http_status_code=status.HTTP_400_BAD_REQUEST, message="project_id have to be specified")
-
-        removed_project = self.__repository.delete_by_id(args["project_id"])
+        removed_project = self.__repository.delete_by_id(request.args["project_id"])
         return jsonify({"ack": removed_project.acknowledged, "count": removed_project.deleted_count})
