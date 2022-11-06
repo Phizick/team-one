@@ -48,10 +48,11 @@
 * Стек
     * Python 3.7
     * Flask
+    * Docker
 * Запуск
     * cd ds/server
-    * pip install -r /path/to/requirements.txt
-    * > python main.py
+    * docker build -t team-one-server .
+    * docker run -d -p 80:8080 -it --rm --name team-one-server-container team-one-server
 * .env:
     * ATLAS_URI
     * DB_NAME
