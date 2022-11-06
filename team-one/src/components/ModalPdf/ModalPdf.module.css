@@ -1,6 +1,6 @@
 .modal {
   box-sizing: border-box;
-  width: 800px;
+  min-width: 800px;
   background: var(--Gradation-100);
   padding: 20px 16px;
   z-index: 4;
@@ -28,4 +28,11 @@
 
 .data_pie > h2 {
   display: none;
+}
+
+@media screen and (max-width:810px) {
+  .modal {
+    min-width: auto;
+    max-width: 90%;
+  }
 }
