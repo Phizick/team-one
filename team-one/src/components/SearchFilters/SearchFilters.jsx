@@ -3,6 +3,10 @@
  * Компонент Фильтры по поиску Анализа ниш
  * @props
  * saveButton - принимает функцию для атрибута onClick
+ * vDateOn - принимает string - дата с
+ * vDateFrom - принимает string - дата по
+ * vAbout - принимает string - категория
+ * vSubject - принимает string - субъект
  * @returns
  * возвращает разметку компонентов FormInput,Input, Button и select
  */
@@ -20,7 +24,7 @@ export const SearchFilters = ({
   vAbout,
   vSubject,
 }) => {
-  const [valueDateOn, setValueDateOn] = useState("");
+  const [valueDateOn, setValueDateOn] = useState("01 2022");
   const [valueDateFrom, setValueDateFrom] = useState("");
   const [valueAbout, setValueAbout] = useState(
     "ЛОШАДИ ЖИВЫЕ: ЧИСТОПОРОДНЫЕ ПЛЕМЕННЫЕ ЖИВОТНЫЕ"

@@ -1,3 +1,5 @@
+// Редьюсер на добавление проекта
+
 import { REQUEST_ADD_PROJECT, ERROR_ADD_PROJECT } from "../action";
 const initialState = {
   projectId: {},

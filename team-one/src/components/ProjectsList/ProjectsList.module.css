@@ -3,6 +3,7 @@
 }
 
 .link {
+  width: 100%;
   text-decoration: none;
   color: var(--Gradation-800);
   transition: 0.2s;
@@ -97,6 +98,20 @@
   display: none;
 }
 
+.not_projects {
+  padding: 16px;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  color: var(--Gradation-800);
+  background: var(--Gradation-100);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .ul_titles {
     display: none;
@@ -114,7 +129,6 @@
 
   .li_project_name_box {
     width: 80%;
-    margin-bottom: 20px;
   }
 
   .li_name {

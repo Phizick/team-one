@@ -1,10 +1,12 @@
 // Редьюсер на окрытие/закрытие модального окна удаления проекта
 
-import { CLOSE_DELETE_PROJECT_MODAL, OPEN_DELETE_PROJECT_MODAL, REQUEST_DELETE_PROJECT } from "../action";
+import {
+  CLOSE_DELETE_PROJECT_MODAL,
+  OPEN_DELETE_PROJECT_MODAL,
+} from "../action";
 
 const initialState = {
   deleteProject: false,
-  idProject: {}
 };
 
 export const deleteProjectReduce = (state = initialState, action) => {
@@ -15,14 +17,6 @@ export const deleteProjectReduce = (state = initialState, action) => {
         deleteProject: true,
       };
     }
-
-    case REQUEST_DELETE_PROJECT: {
-      return {
-        ...state,
-        idProject: action.payload,
-      }
-    }
-
     case CLOSE_DELETE_PROJECT_MODAL: {
       return {
         ...state,

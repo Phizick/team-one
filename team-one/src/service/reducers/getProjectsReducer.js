@@ -1,9 +1,16 @@
-import { ERROR_PROJECTS, REQUEST_PROJECTS, SUCCESS_PROJECTS } from "../action";
+// Редьюсер на получение проектов и удаление проекта по id
+
+import {
+  ERROR_PROJECTS,
+  REQUEST_DELETE_PROJECT,
+  REQUEST_PROJECTS,
+  SUCCESS_PROJECTS,
+} from "../action";
 
 const initialState = {
   projects: [],
   success: false,
-  error: '',
+  error: "",
   pending: false,
 };
 
@@ -35,6 +42,20 @@ export const getProjectsReducer = (state = initialState, action) => {
         pending: false,
       };
     }
+    case REQUEST_DELETE_PROJECT: {
+      const newState = { ...state };
+      const indexProject = newState.projects.findIndex(
+        (item) => item._id === action.payload
+      );
+      if (indexProject !== -1) {
+        newState.projects.splice(indexProject, 1);
+      }
+      return {
+        ...state,
+        projects: [...newState.projects],
+      };
+    }
+
     default: {
       return state;
     }

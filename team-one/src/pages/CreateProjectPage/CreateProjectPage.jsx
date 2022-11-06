@@ -1,8 +1,7 @@
 /**
  * @component
  * Компонент-страница Создания проекта
- * dispatch на получение рекомендаций
- * Название проекта отправляется в localStorage
+ * dispatch на получение рекомендаций и отправку созданного проекта, на основе выбранных полей отрисовываются график и диаграмма
  * @returns
  * возвращает разметку страницы, модальные окна, диграммы, фильтры
  */
@@ -29,6 +28,7 @@ import { STATS } from "../../utils/stats";
 
 export const CreateProjectPage = () => {
   const { data } = useSelector((state) => state.addProjects);
+  const myDate = new Date().toString();
   const idUser = window.localStorage.getItem("id");
   const [isEmpty, setIsEmpty] = useState(true);
   const ref = useRef(null);
@@ -41,7 +41,7 @@ export const CreateProjectPage = () => {
     const dateOnR = `${dateOnMonth} ${dateOnYear}`;
     if (isEmpty === true) {
       dispatch(
-        addProject(idUser, nameInput, dateOnR, dateFrom, about, subject)
+        addProject(idUser, nameInput, dateOnR, dateFrom, about, subject, myDate)
       );
       setNameInput(nameInput);
       dispatch({ type: OPEN_RECOMMENDATIONS });
@@ -69,7 +69,9 @@ export const CreateProjectPage = () => {
             placeholder="Введите название проекта"
           />
         ) : (
-          <h2 className={styleСreateProjectPage.name_project}>{nameInput}</h2>
+          <h2 className={styleСreateProjectPage.name_project}>
+            {nameInput.length !== 0 ? nameInput : "Без названия"}
+          </h2>
         )}
       </div>
       <SearchFilters saveButton={saveButton} />

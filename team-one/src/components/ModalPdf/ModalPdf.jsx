@@ -4,6 +4,7 @@
  * Отправляет dispatch на закрытие модального окна
  * Экспортирование сделано на основе библиотеки React-To-PDF
  * !!В компонент вкладывать не больше 4х субъектов РФ и экспортировать в PDF, после нажатия кнопки "СОХРАНИТЬ"
+ * Принимает захордокженную статистику
  * @props
  * reference - ссылка на DOM
  * @returns
@@ -31,7 +32,12 @@ export const ModalPdf = ({ reference }) => {
     dispatch({ type: CLOSE_PDF_MODAL });
   };
 
-  const barDateStats = STATS.filter((i) => i.subject === data?.subject);
+  const barDateStats = STATS.filter(
+    (i) =>
+      i.subject === data?.subject &&
+      i.tnved_name === data?.about &&
+      i.period === data?.dateOn
+  );
 
   return ReactDOM.createPortal(
     <ModalOverlay closeModal={closeModal} isActive={pdfModal}>

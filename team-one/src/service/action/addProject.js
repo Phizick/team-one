@@ -1,7 +1,15 @@
 import { ERROR_ADD_PROJECT, REQUEST_ADD_PROJECT } from ".";
 import { API } from "../../utils/api";
 
-export const addProject = (id, name, dateOn, dateFrom, about, subject) => {
+export const addProject = (
+  id,
+  name,
+  dateOn,
+  dateFrom,
+  about,
+  subject,
+  date
+) => {
   return (dispatch) => {
     API.post(`/projects`, {
       user_id: id,
@@ -24,6 +32,7 @@ export const addProject = (id, name, dateOn, dateFrom, about, subject) => {
               dateFrom: dateFrom,
               about: about,
               subject: subject,
+              date: date,
             },
           });
         }

@@ -1,8 +1,7 @@
 /**
  * @component
  * Компонент-страница Мой проект
- * dispatch на получение рекомендаций
- * Название проекта отправляется в localStorage
+ * dispatch на получение рекомендаций, очистку субъектов
  * @returns
  * возвращает разметку страницы, модальные окна, диграммы, фильтры
  */
@@ -19,7 +18,7 @@ import { SubjectsPie } from "../../components/SubjectsPie/SubjectsPie";
 import styleProjectPage from "./ProjectPage.module.css";
 import { ExportData } from "../../components/ExportData/ExportData";
 import { useDispatch, useSelector } from "react-redux";
-import { OPEN_RECOMMENDATIONS } from "../../service/action";
+import { CLEAR_SUBJECTS, OPEN_RECOMMENDATIONS } from "../../service/action";
 import { ModalAllSubjects } from "../../components/ModalAllSubjects/ModalAllSubjects";
 import { ModalPdf } from "../../components/ModalPdf/ModalPdf";
 import { useParams } from "react-router-dom";
@@ -39,6 +38,7 @@ export const ProjectPage = () => {
   };
   useEffect(() => {
     dispatch(getProjects(myId));
+    dispatch({ type: CLEAR_SUBJECTS });
   }, [dispatch, myId]);
 
   const findProject = projects && projects.filter((i) => i._id === id);
@@ -46,7 +46,7 @@ export const ProjectPage = () => {
     (i) =>
       i.subject === findProject[0]?.subject &&
       i.tnved_name === findProject[0]?.about &&
-      i.okpd === findProject[0]?.dateOn
+      i.period === findProject[0]?.dateOn
   );
 
   return (
@@ -55,7 +55,9 @@ export const ProjectPage = () => {
       <div className={styleProjectPage.flex}>
         <BackLink toLink="/" />
         <h2 className={styleProjectPage.name_project}>
-          {findProject[0]?.name}
+          {findProject[0]?.name.length !== 0
+            ? findProject[0]?.name
+            : "Без названия"}
         </h2>
       </div>
       <SearchFilters

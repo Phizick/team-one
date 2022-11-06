@@ -1,7 +1,7 @@
 /**
  * @component
  * Компонент-страница авторизации
- * При нажатии на кнопку"Войти", в localStorage записывается введный логин и пароль
+ * При нажатии на кнопку"Войти", в localStorage записывается введный логин, пароль и в случает, если нужно сохранить проекты записывает захардокженый id
  * @returns
  * возвращает разметку страницы, в случае успешного входа отпрявляется роут на /
  */
@@ -19,12 +19,14 @@ export const LoginPage = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const id = uuidv4()
+  const id = uuidv4();
   const loginUserFunc = (e) => {
     e.preventDefault();
     window.localStorage.setItem("login", email);
     window.localStorage.setItem("password", password);
-    window.localStorage.setItem("id", id);
+    email !== "test" && password !== "test"
+      ? window.localStorage.setItem("id", id)
+      : window.localStorage.setItem("id", 3);
     history.replace({ pathname: "/" });
   };
   if (loginUser && passwordUser) {

@@ -3,7 +3,7 @@
  * Компонент список субъектов по началу буквы
  * Отпраляет dispatch на добавление в список subjects и удаление из него
  * @props
- * data - принимает массив, пример: {name: 'Москва', id: 'moscow'}
+ * data - принимает массив, пример: {name: 'Москва', id: 'moscow', bg: random, percent: random(1-100)}
  * char - принимает string, первая буква списка
  * @returns
  * возвращает разметку субъектов
@@ -14,12 +14,35 @@ import { CheckBox } from "../CheckBox/CheckBox";
 import styleSubjectList from "./SubjectList.module.css";
 import { ADD_SUBJECTS, DELETE_SUBJECTS } from "../../service/action";
 export const SubjectList = ({ data, char }) => {
+  const getRandomPercent = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  const bg = [
+    "#FF0000",
+    "#00FFFF",
+    "#0000FF",
+    "#ADD8E6",
+    "#800080",
+    "#FFFF00",
+    "#00FF00",
+    "#FF00FF",
+    "#FFC0CB",
+    "#FFA500",
+  ];
+
+  const bgColor = bg[getRandomPercent(0, 10)];
+
   const dispatch = useDispatch();
   const addSubject = (e) => {
     if (e.target.checked) {
       dispatch({
         type: ADD_SUBJECTS,
-        payload: { id: e.target.id, name: e.target.value },
+        payload: {
+          id: e.target.id,
+          name: e.target.value,
+          percent: getRandomPercent(10, 100),
+          bg: bgColor,
+        },
       });
     } else {
       dispatch({ type: DELETE_SUBJECTS, indx: e.target.id });
