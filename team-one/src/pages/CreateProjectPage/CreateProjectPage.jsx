@@ -39,9 +39,18 @@ export const CreateProjectPage = () => {
     const dateOnYear = dateOn.slice(0, 4);
     const dateOnMonth = dateOn.slice(5, 7);
     const dateOnR = `${dateOnMonth} ${dateOnYear}`;
+    console.log(dateOn.length);
     if (isEmpty === true) {
       dispatch(
-        addProject(idUser, nameInput, dateOnR, dateFrom, about, subject, myDate)
+        addProject(
+          idUser,
+          nameInput,
+          dateOn.length === 7 ? dateOn : dateOnR,
+          dateFrom,
+          about,
+          subject,
+          myDate
+        )
       );
       setNameInput(nameInput);
       dispatch({ type: OPEN_RECOMMENDATIONS });
