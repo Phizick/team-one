@@ -1,3 +1,4 @@
+import logging
 import os
 
 from flask import Flask, send_from_directory
@@ -8,6 +9,7 @@ from api.customs_stats_api import CustomsStatsApi
 from api.project_api import ProjectApi
 from config import config
 from json_encoder import JSONEncoder
+from logging_config import LoggingConfig
 
 app = Flask(__name__, static_folder="react_app")
 CORS(app)
@@ -31,5 +33,6 @@ def serve(path):
 
 
 if __name__ == '__main__':
+    LoggingConfig.init(logging.DEBUG)
     from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
