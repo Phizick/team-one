@@ -1,7 +1,8 @@
 // Главный стор
-
 import { combineReducers } from "redux";
+import { addProjectReducer } from "./addProjectReducer";
 import { deleteProjectReduce } from "./deleteProjectReducer";
+import {  getProjectsReducer } from "./getProjectsReducer";
 import { recommendationsReducer } from "./openRecommendationsReducer";
 import { pdfModalReducer } from "./pdfModalReducer";
 import { subjectsReducer } from "./subjectsReducer";
@@ -12,4 +13,6 @@ export const rootReducer = combineReducers({
   openRecommendations: recommendationsReducer,
   subjects: subjectsReducer,
   pdfModal: pdfModalReducer,
+  projects: getProjectsReducer,
+  addProjects: addProjectReducer,
 });

@@ -6,6 +6,8 @@
  * возвращает разметку страницы
  */
 
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { CreateProjectButton } from "../../components/CreateProjectButton/CreateProjectButton";
@@ -16,8 +18,14 @@ import { ModalUserInfo } from "../../components/ModalUserInfo/ModalUserInfo";
 import { ProjectsList } from "../../components/ProjectsList/ProjectsList";
 import { ProjectsName } from "../../components/ProjectsName/ProjectsName";
 import plusImg from "../../images/plus.svg";
+import { getProjects } from "../../service/action/getProjects";
 import styleMyProjects from "./MyProjectsPage.module.css";
 export const MyProjectsPage = () => {
+  const id = window.localStorage.getItem("id");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProjects(id));
+  });
   return (
     <>
       <Header />

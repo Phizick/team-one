@@ -12,16 +12,19 @@ import stylesLoginPage from "./LoginPage.module.css";
 import { FormInput } from "../../components/FormInput/FormInput";
 import { useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 export const LoginPage = () => {
   const loginUser = window.localStorage.getItem("login");
   const passwordUser = window.localStorage.getItem("password");
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const id = uuidv4()
   const loginUserFunc = (e) => {
     e.preventDefault();
     window.localStorage.setItem("login", email);
     window.localStorage.setItem("password", password);
+    window.localStorage.setItem("id", id);
     history.replace({ pathname: "/" });
   };
   if (loginUser && passwordUser) {
