@@ -39,7 +39,6 @@ export const CreateProjectPage = () => {
     const dateOnYear = dateOn.slice(0, 4);
     const dateOnMonth = dateOn.slice(5, 7);
     const dateOnR = `${dateOnMonth} ${dateOnYear}`;
-    console.log(dateOn.length);
     if (isEmpty === true) {
       dispatch(
         addProject(

@@ -28,6 +28,18 @@ export const SubjectList = ({ data, char }) => {
     "#FF00FF",
     "#FFC0CB",
     "#FFA500",
+    "#1589FF",
+    "#ADDFFF",
+    "#E6E6FA",
+    "#66CDAA",
+    "#43C6DB",
+    "#50C878",
+    "#808000",
+    "#9CB071",
+    "#77DD77",
+    "#DAEE01",
+    "#DBF9DB",
+    "#F7E7CE",
   ];
 
   const bgColor = bg[getRandomPercent(0, 10)];

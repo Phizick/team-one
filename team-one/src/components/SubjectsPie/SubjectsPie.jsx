@@ -44,7 +44,7 @@ export const SubjectsPie = ({ classname }) => {
                   }}
                   className={styleSubjectsPie.percent}
                 >
-                  {data.datasets[0].data[ind]}
+                  {data.datasets[0].data[ind] + '%'}
                 </div>
               </li>
             );

@@ -1,6 +1,6 @@
 .modal {
   box-sizing: border-box;
-  min-width: 800px;
+  min-width: 400px;
   background: var(--Gradation-100);
   padding: 20px 16px;
   z-index: 4;

@@ -28,7 +28,6 @@ import { STATS } from "../../utils/stats";
 export const ProjectPage = () => {
   const { id } = useParams();
   const myId = window.localStorage.getItem("id");
-  console.log(id);
   const { projects } = useSelector((state) => state.projects);
   const ref = useRef(null);
   const dispatch = useDispatch();
